@@ -1,0 +1,18 @@
+@startuml
+database Storage {
+}
+database Database {
+}
+database Events {
+}
+card Export [
+  Export
+]
+folder "Static site" {
+}
+
+Storage -down-> Export
+Database -down-> Export
+Events -down-> Export
+Export -down-> "Static site"
+@enduml

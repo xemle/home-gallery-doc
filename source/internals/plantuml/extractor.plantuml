@@ -1,0 +1,15 @@
+@startuml
+folder Files {
+}
+database FileIndex {
+}
+card Extractor [
+  Extractor
+]
+folder StorageDir {
+}
+
+Files -down-> Extractor
+FileIndex -down-> Extractor
+Extractor -down-> StorageDir
+@enduml

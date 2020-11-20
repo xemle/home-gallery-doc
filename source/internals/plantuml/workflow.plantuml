@@ -1,0 +1,14 @@
+@startuml
+card Indexer {
+}
+card Extractor {
+}
+card Builder {
+}
+card Server {
+}
+
+Indexer -> Extractor
+Extractor -> Builder
+Builder -> Server
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+database FileIndex {
+}
+folder StorageDir {
+}
+card Builder [
+  Builder
+]
+database Database {
+}
+
+FileIndex -down-> Builder
+StorageDir -down-> Builder
+Builder -down-> Database
+@enduml

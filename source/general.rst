@@ -4,7 +4,7 @@ General
 Why another gallery?
 --------------------
 
-My vision is to consume and discover all my digital family memories on my mobile phones served from the SoC Raspberry Pi.
+My vision is to consume and discover all my digital family memories on my mobile phones served from the SoC such as Raspberry Pi.
 The gallery should support myself to explore forgotten photos and videos in my archive. It should lead me through
 common properties via date, place, similarity, person etc to other parts of the archive.
 

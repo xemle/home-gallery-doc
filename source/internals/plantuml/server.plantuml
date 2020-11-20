@@ -1,0 +1,19 @@
+@startuml
+database Storage {
+}
+database Database {
+}
+database Events {
+}
+card Server [
+  Server
+]
+card WebApp [
+  WebApp
+]
+
+Storage -down-> Server
+Database -down-> Server
+Events <-down-> Server
+Server <-down-> WebApp
+@enduml

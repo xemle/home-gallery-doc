@@ -5,7 +5,7 @@ Main Features
 
 * View photo stream
 * Search photo stream
-* Edit photos
+* Edit tags
 * `PWA <https://developer.mozilla.org/de/docs/Web/Progressive_web_apps/>`_ enabled (lightweight mobile app)
 
 List View

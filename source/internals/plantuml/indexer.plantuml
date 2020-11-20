@@ -1,0 +1,12 @@
+@startuml
+folder Files {
+}
+card Indexer [
+  Indexer
+]
+database FileIndex {
+}
+
+Files -right-> Indexer
+Indexer -right-> FileIndex
+@enduml

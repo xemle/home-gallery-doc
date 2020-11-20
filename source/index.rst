@@ -1,7 +1,4 @@
-.. HomeGallery documentation master file, created by
-   sphinx-quickstart on Fri Sep 18 05:13:51 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. HomeGallery documentation master file
 
 Welcome to HomeGallery's documentation!
 =======================================
@@ -25,7 +22,8 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
    :caption: Contents:
 
    general
-   webapp
+   webapp/index
+   internals/index
 
 Indices and tables
 ==================
