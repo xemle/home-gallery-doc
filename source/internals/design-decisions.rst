@@ -10,7 +10,48 @@ Web Gallery
 Today (almost) every thing can be presented and edited by a web page. Mobile
 phones are omnipresent and have enough power to process complex web applications.
 So it makes tatal sence to offer a web gallery for the family where everyone
-cat consume the gallery on their mobile phone.
+can consume the gallery on their mobile phone.
+
+Prerendering Previews
+^^^^^^^^^^^^^^^^^^^^^
+
+The HomeGallery uses precalulated preview images and videos. There are pro and
+cons regarding prerendering and on demand rendering:
+
+Pros of prerendering
+
+* Some feature require preview images. The similarity search as core feature
+  plays only well if (almost) all similarity data are available
+* All previews can be served immediately and gives good user experience
+* Server can be simple such as a SoC like a Raspberry Pi
+* Server can be static for the static site export
+* Original files can be offline (and safe) after preview and meta data extraction
+
+Cons of prerendering
+
+* Prerendering taks time. Preview image calculation of 20,000 image takes few
+  hours. 200,000 require days. Video previews needs weeks - depending on the used system
+* Prerendered images and videos consume about 15% of the orginal size, depending
+  on image/video ratio
+* Gallery can be used after preview calculation is done
+
+Pros of on demand previews
+
+* Initialization of the gallery (time to first usage) takes less time
+* Only requested previews are calculated and saves preview storage
+
+Cons of on demand previews
+
+* Access to original files is required
+* Image previews need a powerful host for good user experience
+* Videos requires supported hardware to trancode videos just in time
+* Some features can not be suppored (e.g. similiarity search)
+
+The prerendered previews is choosen due the core feature of similarity search,
+SoC targets and decoupeling of (offline) originials. I do not think that storage
+consumption of the previews is an issue to the private storage space. Further,
+the time of the preview calculation can be splited in several chunk steps (e.g.
+by years) to use the gallery quickly until all previews are calculated.
 
 JSON
 ^^^^

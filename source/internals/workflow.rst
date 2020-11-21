@@ -13,3 +13,10 @@ Workflow
   preview files and meta data for the WebApp
 * The server serves the database with preview files from the
   storage directory
+
+.. note::
+
+  Before the server can serve the database all preview images and
+  videos needs to be calculated. This can be time consuming
+  depending on the amount of media files and the processing
+  maschine.
