@@ -79,8 +79,47 @@ I like Javascript and Typescript and I think these are awesome languages. The ec
 system with node packages is wide supported. The language helps me prototyping the
 features quickly in the backend and frontend or both. Perfect for a pet project.
 
-SHA1
-^^^^
+Offline File Index
+^^^^^^^^^^^^^^^^^^
 
-The file index uses SHA1 checksum as unique file identifier. It is used because git
-uses it.
+HomeGallery uses an offline file index which stores meta data a directory tree.
+It keeps a state of a file such as name, file time and
+inodes. With it, a change can be detected quickly by comparing the stored state
+with the current state.
+
+This method is choosen over live filesystem notifications like inotify because
+it offers more flexibility. A live notification needs to be run while the gallery
+application runs. Any change outside the lifetime of the application are not
+recognized. This drawback is crucial.
+
+Further a live notification is not required since the time when files or
+directory change are mostly well known. E.g. a user copies new files from the
+camara memory card or a user renames some files or folders. For all these
+scenarios an update happens infrequently and it can be performed fast engough.
+
+An offline file index offers also the possibilty to load the directory tree of
+an offline media source and operations can still be performed on existing
+previews or meta data on the storage.
+
+File identifier
+^^^^^^^^^^^^^^^
+
+As file or media identifier a SHA1 checksum is used. This checksum is calculated
+over the file content and if a single bit changes, the checksum changes. SHA1
+algorithm is used because git uses it and is good enough where the gallery
+has not more than one million files.
+Due the usage of the file index, an calculation of the checksum happens only for unknown
+file such as new or changed files.
+
+A renamed or moved file might trigger a recalculation of the checksum as
+identifier but results to a known identifier. So already calculated preview files or
+meta data can be kept.
+
+It has also some security properties: The identifier is not guessable.
+As long the identifier is not known, the image can not be retrived. A storage
+can hold images for several user galleries.
+
+.. note::
+    Any change on the file (also embedding new meta data such as GEO data, IPTC or XMP) leads to
+    a new identifier and to new preview file generations.
+    Therefore it is recommended to use side car files such as `.xmp` files.
