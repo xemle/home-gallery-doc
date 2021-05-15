@@ -13,9 +13,9 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
 
 .. note::
    The current state of this project is in early alpha status. This pet project was started to solves my
-   needs and requires CLI/terminal interactions and some basic programming skills. The tested platform is
-   Linux/Debian.
-   It should run on Mac or Windows but is not tested.
+   needs and requires CLI/terminal interactions.
+   The most tested platform is Linux/Debian.
+   It runs also on Mac or Windows but are barley tested.
 
 .. toctree::
    :maxdepth: 2
