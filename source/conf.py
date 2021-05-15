@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'HomeGallery'
-copyright = '2020, Sebastian Felis'
+copyright = '2021, Sebastian Felis'
 author = 'Sebastian Felis'
 
 # The full version, including alpha/beta/rc tags
@@ -33,6 +33,8 @@ release = '1.0.0'
 extensions = [
   'sphinx_rtd_theme',
   'sphinxcontrib.plantuml',
+  'sphinxcontrib.asciinema',
+  'sphinx_sitemap'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -55,3 +57,7 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Sitemap configuration
+html_baseurl = 'https://docs.home-gallery.org/'
+html_extra_path = ['robots.txt']

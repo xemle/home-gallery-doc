@@ -16,7 +16,7 @@ The file index holds a state of the filesystem including
 
 It is stored as gziped JSON file. This data is generated and can be recalculated
 
-To inspect an file index the tool `jq <https://stedolan.github.io/jq>` is recommended.
+To inspect an file index the tool `jq <https://stedolan.github.io/jq>`_ is recommended.
 
 .. code-block::
 

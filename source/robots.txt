@@ -1,0 +1,5 @@
+# Group 2
+User-agent: *
+Allow: /
+
+Sitemap: https://docs.home-gallery.org/sitemap.xml

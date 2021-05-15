@@ -8,6 +8,6 @@ RUN mkdir -p /usr/share/man/man1 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN pip install sphinx_rtd_theme sphinxcontrib-plantuml
+RUN pip install sphinx_rtd_theme sphinxcontrib-plantuml sphinxcontrib.asciinema sphinx-sitemap
 
 CMD ["make", "html"]

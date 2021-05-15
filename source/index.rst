@@ -22,6 +22,7 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
    :caption: Contents:
 
    general
+   install/index
    webapp/index
    internals/index
 
