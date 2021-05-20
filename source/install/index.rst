@@ -21,4 +21,4 @@ configuration file from `GitHub <https://github.com/xemle/home-gallery/blob/mast
 Installation Tutorial
 ---------------------
 
-.. asciinema:: yrKSWm5v6Irz8zCribmF1Xrz4
+.. asciinema:: JTujXlEDC8BE91lJ5y33meFo8
