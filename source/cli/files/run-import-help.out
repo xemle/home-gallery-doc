@@ -1,0 +1,10 @@
+gallery.js run import
+
+Import and update new files from sources
+
+Options:
+      --version  Show version number                                   [boolean]
+  -c, --config   Configuration file              [default: "gallery.config.yml"]
+  -i, --initial  Run initial incremental import                        [boolean]
+  -u, --update   Check and import new files                            [boolean]
+  -h, --help     Show help                                             [boolean]

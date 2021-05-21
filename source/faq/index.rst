@@ -22,8 +22,7 @@ All low resolution preview images are send to this public API by default.
 No images or privacy data are kept from this API.
 
 The API can be configured and ran also locally or as Docker container. See
-``api-service`` package from the `GitHub repo <https://github.com/xemle/home-gallery/tree/master/packages/api-server>`_
-for further information.
+:ref:`api-server` section for details.
 
 How many data is stored in the storage directory?
 -------------------------------------------------
@@ -49,6 +48,11 @@ or weeks. For that reason it is a good idea to start with some
 sub directories and exclude video files like AVI, MOV, MPEG or MP4
 files. Process further partent directories or videos later
 for you need and patience.
+
+Use following exclude file to process only image files (JPG and PNG):
+
+.. literalinclude:: files/only-images.exclude
+    :language: text
 
 Due the internal structure already processed previews are not
 recalculated later.

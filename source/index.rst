@@ -23,7 +23,10 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
 
    general
    install/index
+   cli/index
+   configuration/index
    webapp/index
+   api-server/index
    faq/index
    internals/index
 

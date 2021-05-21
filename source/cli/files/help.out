@@ -1,0 +1,18 @@
+Usage: gallery.js [global options] <command> [options]
+
+Commands:
+  gallery.js index        Create or update file index
+  gallery.js extract      Extract meta data and calculate preview files
+  gallery.js database     Build database from file indices, extracted meta data
+                          and preview files from the storage
+  gallery.js server       Start web server
+  gallery.js export       Create a static export
+  gallery.js interactive  Interactive menu                             [default]
+  gallery.js run          Run common tasks
+
+Options:
+      --version  Show version number                                   [boolean]
+  -c, --config   Configuration file              [default: "gallery.config.yml"]
+  -h, --help     Show help                                             [boolean]
+
+(c) 2021 HomeGallery - https://home-gallery.org

@@ -17,10 +17,16 @@ videos to name a few.
 
 This gallery is to consume, browse and discover all my personal photos and videos.
 
+.. note::
+    Do you like HomeGallery? Does it solve your media problem?
+    Please support this project through any recurring support to my
+    `patreon.com/xemle <https://www.patreon.com/xemle>`_ or one time support to my
+    `paypal.me/xemle <https://paypal.me/xemle>`_ account. Thank you in advance.
+
 Use Cases
 ---------
 
-* You want to browse your photos and videos from PC on your mobile phone
+* You want to browse your photos and videos from your PC on your mobile phone
 * You want to consolidate the media of your different folders to a single pool
 * You still want to browse your media which are stored offline on backup drives
 * You want to export a subset as static gallery for public sharing
@@ -28,13 +34,16 @@ Use Cases
 Core Features
 -------------
 
-* It is fast (by accident)
+* It is fast (by accident) - verify it on the `demo gallery <https://demo.home-gallery.org>`_
+* Photos and video support
+* Infinite scrolling
 * Mobile friendly
 * Similar image search AKA reverse image search
-* Simple tagging
-* Search with boolean expression
+* Face and object detection
+* Single and multi select tagging
+* Search with boolean expressions
 * Geo reverse lookup (geo coordinates to localized address)
-* Server runs on a SoC Raspberry PI
+* Runs on a SoC Raspberry PI
 * PWA as light mobile app
 * Static site export
 
@@ -42,12 +51,12 @@ Limits
 ------
 
 * There is only one user who can see all media
-* Current tested limits is about 100,000 images/videos
+* Current tested limits are about 400,000 images/videos
 * The whole database is loaded into the browser and requires recent (mobile) devices and internet connection
 * No support for RAW image formats (yet)
 * No downloads of original files
-* Software has alpha state and requires some basic programming skills
-* There is practically no support on installation and usage issue
+* Software has beta state and requires some terminal/scripting skills
+* There is limited support on installation and usage
 
 HomeGallery is not ...
 ----------------------

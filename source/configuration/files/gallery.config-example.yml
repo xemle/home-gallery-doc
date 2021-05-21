@@ -1,0 +1,96 @@
+#
+# HomeGallery configuration file
+#
+#
+# Default configuration file is gallery.config.yml. JSON format is
+# also supported (gallery.config.json)
+#
+# This is a comment, starting with hash tag and space ('# ')
+# A default value starting with hash tag and variable ('#baseDir...')
+#
+# Directory value examples:
+# - /absolute/directory
+# - relative/directory/to/current/working/dir
+# - ~/directory/in/your/home
+# - ./relative/directory/to/configuration/file
+#
+# Variable replacements
+#   baseDir: '~'
+#   configDir: '{baseDir}/.config/home-gallery'
+# configDir is replaced to '~/.config/home-gallery' and than to '$HOME/.config/home-gallery'
+#
+# Variables are baseDir, configDir, configPrefix, cacheDir and dir in sources
+#
+# Variables baseDir, configDir, configPrefix and cacheDir are overwritten by environment
+# variables GALLERY_BASE_DIR, GALLERY_CONFIG_DIR, GALLERY_CONFIG_PREFIX, GALLERY_CACHE_DIR
+
+#
+# General
+#
+#baseDir: '~'
+#configDir: '{baseDir}/.config/home-gallery'
+# file prefix for index, database and events
+#configPrefix: ''
+#cacheDir: '{baseDir}/.cache/home-gallery'
+
+#
+# Sources
+#
+# List of media source directories. These can be read only.
+#
+# All sources are used to build the gallery database. If you need
+# different databases or gallery instances use different gallery
+# configurations
+sources:
+  - dir: '{baseDir}/Pictures'
+    #index: '{configDir}/{configPrefix}{basename(dir)}.idx'
+    # excludes are using gitignore patterns
+    #excludes:
+      #- .DS_Store
+      #- ._*
+      #- '*.tmp'
+      #- '*cache*'
+    #excludeIfPresent: .galleryignore
+    # excludeFromFile: '{configDir}/excludes'
+    # If source directory/disk is offline/unmounted set it to true.
+    # Offline sources require an index file. Previews and meta data
+    # should be extracted first before marking a source offline
+    #offline: false
+    # Filename matcher for checksum recalculation
+    # size-ctime-inode: this matcher should be used if possible, might
+    #                   not work on windows
+    # size-ctime: this matcher should be used if stable fs inodes are
+    #             not available and might not work for fuse shares
+    # size: this matcher should be used if you know what you are doing
+    #matcher: size-ctime-inode
+
+#
+# Extractor settings
+#
+#extractor:
+  #apiServer: https://api.home-gallery.org
+  # Preffered address language of geo code reverse lookups
+  # geoAddressLanguage: [de, en-US] # for multiple languages
+  #geoAddressLanguage: en
+  # excludes are using gitignore patterns
+  #excludes: []
+
+#
+# Storage and files configuration
+#
+#storage:
+  #dir: '{cacheDir}/storage'
+#database:
+  #file: '{configDir}/{configPrefix}database.db'
+#events:
+  #file: '{configDir}/{configPrefix}events.db'
+
+#
+# Server configuration
+#
+#server:
+  #port: 3000
+  #host: '0.0.0.0'
+  # security configuration for https
+  # key: '{configDir}/server.key'
+  # cert: '{configDir}/server.crt'

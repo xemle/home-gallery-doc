@@ -1,0 +1,13 @@
+gallery.js run
+
+Run common tasks
+
+Commands:
+  gallery.js run init    Initialize the gallery configuration
+  gallery.js run server  Start the webserver
+  gallery.js run import  Import and update new files from sources
+
+Options:
+      --version  Show version number                                   [boolean]
+  -c, --config   Configuration file              [default: "gallery.config.yml"]
+  -h, --help     Show help                                             [boolean]

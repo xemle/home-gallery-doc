@@ -1,0 +1,10 @@
+gallery.js run init
+
+Initialize the gallery configuration
+
+Options:
+      --version  Show version number                                   [boolean]
+  -c, --config   Configuration file              [default: "gallery.config.yml"]
+  -s, --sources  Initial source directories                              [array]
+  -f, --force    Force, overwrite existing configuration               [boolean]
+  -h, --help     Show help                                             [boolean]

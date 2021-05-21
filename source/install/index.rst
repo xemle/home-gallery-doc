@@ -1,24 +1,30 @@
 Install
 =======
 
-HomeGallery has prebuilt binaries for
+HomeGallery is a command line tool to init the configuration, start the web server
+at `localhost:3000 <http://localhost:3000>`_ and import the media sources.
+To run your gallery at home you need to
 
-* `Linux <https://dl.home-gallery.org/dist/latest/home-gallery-latest-linux-x64>`_
-* `Mac <https://dl.home-gallery.org/dist/latest/home-gallery-latest-darwin-x64>`_
-* `Windows <https://dl.home-gallery.org/dist/latest/home-gallery-latest-win-x64.exe>`_
+* install the software
+* initialize the configuration
+* run the local web server
+* import your media sources
 
-Other download options can be found `here <https://dl.home-gallery.org/dist>`_.
+HomeGallery can run through
 
-A prebuilt binary is a command line application and a selfextracting archive.
-On the first start it extracts all required files to a temporary directory
-and starts the gallery CLI. Please be patient on the first start.
-Future starts skip the extraction and the gallery starts faster.
-
-The gallery CLI requires a `gallery.config.yml` configuration file and
-it is created if missing. Please read the options and comments for this
-configuration file from `GitHub <https://github.com/xemle/home-gallery/blob/master/gallery.config-example.yml>`_.
+* prebuilt binary on Linux, Mac on Windows
+* as docker container
+* docker-compose
+* application bundle Linux, Mac on Windows
+* from source
 
 Installation Tutorial
 ---------------------
 
 .. asciinema:: JTujXlEDC8BE91lJ5y33meFo8
+
+.. include:: binary.rst
+.. include:: docker.rst
+.. include:: docker-compose.rst
+.. include:: app-bundle.rst
+.. include:: source.rst

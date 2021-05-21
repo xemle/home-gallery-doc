@@ -1,0 +1,8 @@
+gallery.js run server
+
+Start the webserver
+
+Options:
+      --version  Show version number                                   [boolean]
+  -c, --config   Configuration file              [default: "gallery.config.yml"]
+  -h, --help     Show help                                             [boolean]
