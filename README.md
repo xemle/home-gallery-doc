@@ -1,6 +1,6 @@
 # Documentation of HomeGallery
 
-This repository contains the [documentation](https://docs.home-gallery) of the
+This repository contains the [documentation](https://docs.home-gallery.org) of the
 web gallery [HomeGallery](https://home-gallery.org). The documentation is
 generated through [sphinx](https://www.sphinx-doc.org).
 
