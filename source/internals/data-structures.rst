@@ -59,6 +59,8 @@ To inspect an file index the tool `jq <https://stedolan.github.io/jq>`_ is recom
    ]
    }
 
+.. _data-structure-storage:
+
 Storage directory
 ^^^^^^^^^^^^^^^^^
 

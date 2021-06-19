@@ -12,6 +12,8 @@ phones are omnipresent and have enough power to process complex web applications
 So it makes tatal sence to offer a web gallery for the family where everyone
 can consume the gallery on their mobile phone.
 
+.. _design-decision-prerendering:
+
 Prerendering Previews
 ^^^^^^^^^^^^^^^^^^^^^
 

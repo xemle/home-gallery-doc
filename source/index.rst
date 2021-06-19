@@ -24,6 +24,7 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
    general
    install/index
    webapp/index
+   faq/index
    internals/index
 
 Indices and tables
