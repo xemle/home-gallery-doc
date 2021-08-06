@@ -57,6 +57,39 @@ Use following exclude file to process only image files (JPG and PNG):
 Due the internal structure already processed previews are not
 recalculated later.
 
+How does the image similarity work?
+-----------------------------------
+
+The image similarity or reverse image search works through a pretrained
+image net of machine learning. It uses pretrained Google's mobilenet to
+extract an similarity vector which is than compared agains other images.
+
+In detail is uses the embeddings layer for the similarity vector and optimizes
+(or reduces the size) for the browser. The embeddings layer is retrieved
+via the API server as extractor step. When the database is build, the
+raw vector is reduced in data - in number of data points and in precision.
+
+The exact algorithm where discovered in an investigation/analysis
+phase. As result it is more important to have data points than the precision.
+Therefore, the initial vector of 1024 floats is reduces to a third
+of 341 numbers with a 2 bit precision. These bits are packed to bytes and
+encoded in base64 to a JSON string with 116 chars like:
+
+.. code-block::
+
+    EGUUohiokFBoKUWwUhsFdRjUAEQQARElJZQmDlVCK6lgwsTGm2SRUYYEQGgAVRCCVEoQJFABVbJRSEIoQ1rpHDQUCIAWnVQRTlVSFIlDZQUEhLiFgAA=
+
+With this procedure it is possible to reduce 1.3 GB raw vector data of
+100,000 images to about 11 MB with some quality reduction but better browser
+support.
+
+The comparison is done by the cosine similarity from a seed similarity
+vector against all other images. In modern browsers - even on mobile
+devices the similarity comparison takes less than 500ms for about 100,000
+images.
+
+Exact limits, factors or scaling should be extracted from the source.
+
 Do I need to delete the storage directory?
 ------------------------------------------
 
