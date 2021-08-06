@@ -3,8 +3,15 @@ gallery.js run import
 Import and update new files from sources
 
 Options:
-      --version  Show version number                                   [boolean]
-  -c, --config   Configuration file              [default: "gallery.config.yml"]
-  -i, --initial  Run initial incremental import                        [boolean]
-  -u, --update   Check and import new files                            [boolean]
-  -h, --help     Show help                                             [boolean]
+      --version         Show version number                            [boolean]
+  -l, --log-level       console log level
+         [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
+                                                               [default: "info"]
+  -L, --log-file        Log file
+      --log-file-level  Log file level
+         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
+                                                                        "debug"]
+  -c, --config          Configuration file       [default: "gallery.config.yml"]
+  -i, --initial         Run initial incremental import                 [boolean]
+  -u, --update          Check and import new files                     [boolean]
+  -h, --help            Show help                                      [boolean]
