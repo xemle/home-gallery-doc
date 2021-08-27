@@ -57,6 +57,43 @@ Use following exclude file to process only image files (JPG and PNG):
 Due the internal structure already processed previews are not
 recalculated later.
 
+Why is a progress indicator for all files is missing?
+-----------------------------------------------------
+
+TL;DR the current non-progress state is on purpose. The recommended
+import is the initial (progressive) import via ``./gallery run import --initial``.
+
+Looong version: Progress information on long taking processes like importing a
+gallery data is awesome. The assumption is that a user imports 50k - 100k media
+files (0,5 TB - 1 TB data) with some videos and wants to see as early as possible
+some pictures on the gallery.
+
+However due the architecture of HomeGallery the files need to be indexed and the file
+checksums need to be calculated which are used as unique file ids. Afterwards the
+preview files and web compatible video previews need to be calculated. As final
+step the database is build. So there is no intermediate step to shortcut to present
+pictures in the browser.
+
+If the whole media archive is processed at once it is time consuming for checksums,
+image and video previews. As mentioned, the image previews will take
+days, the video previews will take weeks depending on your amount of pictures,
+videos and host machine.
+
+Since the assumed standard user wants to see early results, the recommended import
+of an archive should be incremental (or by chunks) via
+``./gallery run import --initial``. Than the files are indexed and processed in chunks
+and the database is build successive. The gallery will reload automatically when the
+database changes. So the user sees some pictures early while the whole archive
+import is in progress for weeks.
+
+The internals of this progress is done via the indexer and the ``--add-limits``
+parameter listed by ``./gallery index -h`` (see also the
+`source comments <https://github.com/xemle/home-gallery/blob/master/packages/index/src/limit-filter.js>`_).
+This uses the gallery characteristic that the gallery knows only the files, which
+are indexed. So the indexer stops after adding some new files (afterwards these new
+files are processed, the database is updated, new files are indexed and so on and
+so forth).
+
 How does the image similarity work?
 -----------------------------------
 
