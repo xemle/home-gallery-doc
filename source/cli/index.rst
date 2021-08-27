@@ -99,3 +99,27 @@ media files, meta data and previews needs to be checked.
     If the ``import`` command is aborted (eg. by the user), you should run
     a full import to ensure that all meta data and all previews are
     available.
+
+fetch command
+------------------
+
+The fetch command
+
+* fetches a remote gallery
+* merges remote database and events from local
+* downloads remote previews to local storage
+
+.. literalinclude:: files/fetch-help.out
+    :language: bash
+
+cast command
+------------------
+
+The cast command
+
+* cast a slideshow to a Chromecast-enabled TV
+
+.. literalinclude:: files/cast-help.out
+    :language: bash
+
+Example: ``./gallery cast -u https://demo.home-gallery.org``

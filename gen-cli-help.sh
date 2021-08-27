@@ -13,6 +13,9 @@ $CLI run -h > $CLI_FILES/run-help.out
 $CLI run init -h > $CLI_FILES/run-init-help.out
 $CLI run server -h > $CLI_FILES/run-server-help.out
 $CLI run import -h > $CLI_FILES/run-import-help.out
+for COMMAND in fetch cast; do
+  $CLI $COMMAND -h > $CLI_FILES/$COMMAND-help.out
+done
 
 
 cp $GALLERY_HOME/gallery.config-example.yml source/configuration/files

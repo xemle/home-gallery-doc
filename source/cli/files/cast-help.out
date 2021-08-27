@@ -1,0 +1,28 @@
+gallery.js cast
+
+Cast media slideshow to Google Chromecast
+
+Options:
+      --version            Show version number                         [boolean]
+  -l, --log-level          console log level
+         [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
+                                                               [default: "info"]
+  -L, --log-file           Log file
+      --log-file-level     Log file level
+         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
+                                                                        "debug"]
+  -u, --server-url, --url  Gallery server url                         [required]
+  -q, --query              Search query                                 [string]
+      --proxy              Use HTTP proxy. Chromecast does not support internal
+                           DNS and self-signed certificates. The proxy bypasses
+                           this limit. Use --no-proxy to disable it for public
+                           galleries                   [boolean] [default: true]
+      --proxy-ip           Use given IP for proxy. Auto detect if not given
+  -p, --port               Proxy port                  [number] [default: 38891]
+  -k, --insecure           Do not verify HTTPS certificates. Disable it by
+                           --no-insecure if you know what you do       [boolean]
+      --random             Randomize playback. Use --no-random for linear order
+                                                                       [boolean]
+      --delay              Delay between the images in seconds
+                                                           [number] [default: 5]
+  -h, --help               Show help                                   [boolean]

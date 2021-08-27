@@ -7,6 +7,8 @@ Commands:
                           and preview files from the storage
   gallery.js server       Start web server
   gallery.js export       Create a static export
+  gallery.js fetch        Fetch and merge from remote
+  gallery.js cast         Cast media slideshow to Google Chromecast
   gallery.js interactive  Interactive menu                             [default]
   gallery.js run          Run common tasks
 
