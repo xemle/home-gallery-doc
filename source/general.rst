@@ -36,16 +36,27 @@ Core Features
 
 * It is fast (by accident) - verify it on the `demo gallery <https://demo.home-gallery.org>`_
 * Photos and video support
-* Infinite scrolling
+* Infinite scrolling / infinite photo stream
 * Mobile friendly
 * Similar image search AKA reverse image search
 * Face and object detection
 * Single and multi select tagging
-* Search with boolean expressions
+* Expressive query language for media search or filtering
 * Geo reverse lookup (geo coordinates to localized address)
 * Runs on a SoC Raspberry PI
 * PWA as light mobile app
 * Static site export
+* Fetch remote gallery
+* Cast media to Google Chromecast TV devices
+
+File Format Features
+^^^^^^^^^^^^^^^^^^^^
+
+* JPEG, PNG, TIFF image file format support
+* MP4, MOV, AVI, MPEG video file format support (and many more)
+* RAW image support due embedded preview files
+* HEIC/HEIF image support
+* Tags/Labels via XMP sidecar files
 
 Limits
 ------

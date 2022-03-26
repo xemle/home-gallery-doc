@@ -5,7 +5,7 @@ Docker Compose
 
 Docker compose simplifies the configuration of containers and
 connected services. Following example starts the HomeGallery with
-a local api server.
+a local API server.
 
 .. literalinclude:: files/docker-compose.yml
     :language: yaml

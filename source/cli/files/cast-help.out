@@ -21,7 +21,9 @@ Options:
   -p, --port               Proxy port                  [number] [default: 38891]
   -k, --insecure           Do not verify HTTPS certificates. Disable it by
                            --no-insecure if you know what you do       [boolean]
-      --random             Randomize playback. Use --no-random for linear order
+  -s, --random, --shuffle  Randomize playback. Use --no-random for linear order
+                                                                       [boolean]
+  -r, --reverse            Reverse order. Default order is by date oldest first
                                                                        [boolean]
       --delay              Delay between the images in seconds
                                                            [number] [default: 5]

@@ -100,14 +100,27 @@ media files, meta data and previews needs to be checked.
     a full import to ensure that all meta data and all previews are
     available.
 
+export command
+------------------
+
+The export command
+
+* Exports a static gallery
+* Requires only static webserver like nginx or Apache
+* Supports subset exports via query
+
+.. literalinclude:: files/export-help.out
+    :language: bash
+
 fetch command
 ------------------
 
 The fetch command
 
-* fetches a remote gallery
-* merges remote database and events from local
-* downloads remote previews to local storage
+* Fetches a remote gallery
+* Merges remote database and events from local
+* Downloads remote previews to local storage
+* Supports subset imports via query
 
 .. literalinclude:: files/fetch-help.out
     :language: bash
@@ -117,9 +130,17 @@ cast command
 
 The cast command
 
-* cast a slideshow to a Chromecast-enabled TV
+* Cast a slideshow to a Chromecast-enabled TV
+* Supports subsets via query
 
 .. literalinclude:: files/cast-help.out
     :language: bash
 
-Example: ``./gallery cast -u https://demo.home-gallery.org``
+Example:
+  ``./gallery cast -u https://demo.home-gallery.org``
+
+.. note::
+    Cast command does not work inside a docker container by default.
+    The cast command needs to run in the same network as Google's Chromecast
+    device. Please ensure that your docker container runs in the
+    same network

@@ -1,0 +1,46 @@
+Term (*alias*);Operands;Value type;Examples
+``id``;text operands;*text*;id~a52f8e
+``type``;``:``, ``=``, ``!=``;*text*;type:image, type != video, type=rawImage
+``index``;text operands;*text*;index:Pictures
+``file``;text operands;*text*;file~101Canon/IMG_1234
+``filename``;text operands;*text*;filename~IMG_1234
+``path``;text operands;*text*;path~101Canon
+``ext``;text operands;*text*;ext:xmp
+``filesize``;number operands;*number*/*text*;filesize >= 1024, filesize > 2MB
+``width``;number operands;*number*;width >= 1980
+``height``;number operands;*number*;height < 3000
+``ratio``;number operands;*number*;ratio > 2
+``ratio``;"``:`` ``=``";*text*;ratio:panorama, ratio:landscape, ratio:square, ratio:portrait
+``duration``;number operands;*number*;duration > 60, duration in [120:360]
+``year`` (``y``);number operands;*number*;year:2000, y >= 2020, y in [2010 : 2020]
+``month`` (``m``);number operands;*number*;month != 12, m in [1 : 6]
+``day`` (``d``);number operands;*number*;day = 3, d in [4 : 10]
+``hour`` (``H``);number operands;*number*;hour > 6, H in [9 : 17]
+``minute`` (``M``);number operands;*number*;minute = 4, M in [0 : 30]
+``make``;text operands;*text*;make:canon, make ~ niko
+``model``;text operands;*text*;model:m50, model ~ A22
+``location``;text operands;*text*;location:germany, location ~ thai
+``country``;text operands;*text*;location:germany, location ~ thai
+``state``;text operands;*text*;state != florida, state ~ fornia
+``city``;text operands;*text*;city = rome, city ~ stock
+``road`` (``street``);text operands;*text*;road:main, street ~ way
+``longitude`` (``lon``);number operands;*number*;lon > 0
+``latitude`` (``lat``);number operands;*number*;latitude < -20
+``tag``;text operands;*text*;tag:vacation, tag != 'san francisco'
+``tags``;list operands;*list*;tag in (vacation, winter)
+``object``;text operands;*text*;object:couch
+``exists(make)``; ; ;exists(make)
+``exists(model)``; ; ;exists(model)
+``exists(location)``; ; ;exists(location)
+``exists(country)``; ; ;exists(country)
+``exists(state)``; ; ;exists(state)
+``exists(city)``; ; ;exists(city)
+``exists(road)`` (``exists(street)``); ; ;exists(road)
+``exists(geo)``; ; ;exists(geo)
+``exists(tags)``; ; ;exists(tags)
+``exists(objects)``; ; ;exists(objects)
+``exists(faces)``; ; ;exists(faces)
+``count(files)``;number operands;*number*;count(files) = 1
+``count(tags)``;number operands;*number*;count(tags) > 1
+``count(objects)``;number operands;*number*;count(objects) = 0
+``count(faces)``;number operands;*number*;count(faces) = 0

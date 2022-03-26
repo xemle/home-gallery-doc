@@ -1,0 +1,11 @@
+Operands;Descriptions
+``:``;Key value, in most cases it is an alias for ``=``
+``=``;**Equal to** case sensitive in some cases
+``<``;**Smaller to** for numeric values
+``<=``;**Smaller or equal to** for numeric values
+``>=``;**Greater or equal to** for numeric values
+``>``;**Greater to** for numeric values
+``!=``;**not equal**
+``~``;**contains** case insensitive
+``count(key)``;Counts elements of a list
+``exists(key)``;Check if elements exists

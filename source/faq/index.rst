@@ -154,3 +154,21 @@ The reason for this message is that the extractor most
 probably did not processed this file. This might happen due an
 incomplete or broken full media processing.
 
+Are Raw Images supported?
+-------------------------
+
+If a RAW image file (or unsupported image format) has a JPG sidecar
+file, HomeGallery will use this JPG file for preview.
+E.g. ``IMG_1234.cr3`` has a JPG sidecar file ``IMG_1234.jpg`` or
+``IMG_1234.cr3.jpg`` than preview images are generated from
+``IMG_1234.jpg`` (or ``IMG_1234.cr3.jpg``).
+
+If no JPG sidecar is available, HomeGallery can extract embedded
+preview images from the RAW image file through ``exiftool`` if
+available. These previews have mostly a lower resolution than the
+original image.
+
+.. note::
+    It is assumed that disk space is not an issue for the usecase of
+    HomeGallery. It is recommended to generate JPG sidecars by your
+    own to have good image preview for your raw images.

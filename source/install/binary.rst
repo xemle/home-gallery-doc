@@ -41,7 +41,7 @@ Quickstart
 
     curl -sL https://dl.home-gallery.org/dist/latest/home-gallery-latest-linux-x64 -o gallery
     chmod 755 gallery
-    ./gallery init --source ~/Pictures
+    ./gallery run init --source ~/Pictures
     ./gallery run server &
     ./gallery run import --initial
 

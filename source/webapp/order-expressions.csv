@@ -1,0 +1,12 @@
+Expression;Example
+``date``;Default order by date desc, newest first
+``updated``;Order by file updates
+``random``;Order randomly
+``duration``;Order by video duration
+``width``;Order by image width
+``height``;Order by image heigt
+``filesize``;Order by the largest file
+``count(files)``;Number of files
+``count(tags)``;Order by detected faces
+``count(faces)``;Order by detected faces
+``count(objects)``;Order by detected objects

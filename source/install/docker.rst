@@ -2,7 +2,7 @@ Docker
 ------
 
 HomeGallery offers docker image at `xemle/home-gallery <https://hub.docker.com/r/xemle/home-gallery>`_
-(amd64 and arm64 architecture).
+(amd64, arm64, arm/v7 and arm/v6 architecture).
 These image are build via `GitHub actions <https://github.com/xemle/home-gallery/actions>`_.
 
 Data volume structure
@@ -38,7 +38,7 @@ Quickstart
       -v $HOME/Pictures:/data/Pictures \
       -u $(id -u):$(id -g) \
       -p 3000:3000 xemle/home-gallery"
-    gallery init --source /data/Pictures
+    gallery run init --source /data/Pictures
     gallery run server &
     gallery run import --initial
 

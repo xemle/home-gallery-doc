@@ -14,8 +14,9 @@ HomeGallery can run through
 
 * prebuilt binary on Linux, Mac on Windows
 * as docker container
-* docker-compose
-* application bundle Linux, Mac on Windows
+* via docker-compose
+* application bundle for Linux, Mac on Windows
+* generic application bundle
 * from source
 
 Installation Tutorial
@@ -27,4 +28,5 @@ Installation Tutorial
 .. include:: docker.rst
 .. include:: docker-compose.rst
 .. include:: app-bundle.rst
+.. include:: generic-bundle.rst
 .. include:: source.rst
