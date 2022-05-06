@@ -23,7 +23,7 @@ services:
       - ./data:/data
       # Mount your media directories below /data
       - ${HOME}/Pictures:/data/Pictures
-    expose:
+    ports:
       - "3000:3000"
     user: "${CURRENT_USER}"
     entrypoint: ['node', '/app/gallery.js', 'run', 'server']
