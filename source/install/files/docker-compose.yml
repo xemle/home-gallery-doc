@@ -5,19 +5,21 @@ services:
     #build: packages/api-server
     image: xemle/home-gallery-api-server
     environment:
-      # TensorflowJS backends: cpu, wasm and node. Use wasm
-      # if you have troubles.
+      # TensorflowJS backends
+      # - cpu: slowest and best support
+      # - wasm: good perfromance for arm64 and amd64 platforms
+      # - node: best performance on amd64 platform
       #- BACKEND=cpu
-      #- BACKEND=wasm
-      - BACKEND=node
-    ports:
-      - "3000"
+      - BACKEND=wasm
+      #- BACKEND=node
   gallery:
     # custom build via
     #build: .
     image: xemle/home-gallery
     environment:
       - GALLERY_API_SERVER=http://api:3000
+      #- GALLERY_API_SERVER_CONCURRENT=1 # On low powered devices
+      #- GALLERY_API_SERVER_TIMEOUT=60 # On low powered devices
       - GALLERY_OPEN_BROWSER=false
     volumes:
       - ./data:/data
@@ -26,4 +28,5 @@ services:
     ports:
       - "3000:3000"
     user: "${CURRENT_USER}"
-    entrypoint: ['node', '/app/gallery.js', 'run', 'server']
+    entrypoint: ['node', '/app/gallery.js']
+    command: ['run', 'server']

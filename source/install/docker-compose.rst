@@ -13,9 +13,10 @@ a local API server.
 
 .. note::
 
-    The example uses ``node`` backend in the API server which is only
-    supported for amd64 hosts. Use ``BACKEND=wasm`` on Raspberry PIs or
-    if you discover troubles.
+    By default the ``wasm`` backend for the API server is used for best
+    support on most platforms (SoS, NAS, cloud and desktop). Use ``node``
+    backend for best performance on amd64 CPUs like desktops. Please
+    validate that the backend ``node`` works for you.
 
 Quickstart
 ^^^^^^^^^^
@@ -25,6 +26,15 @@ Quickstart
 
     mkdir -p data
     echo "CURRENT_USER=$(id -u):$(id -g)" >> .env
-    docker-compose exec gallery /app/gallery.js run init --source /data/Pictures
-    docker-compose up
-    docker-compose exec gallery /app/gallery.js run import --update
+    docker-compose run gallery run init --source /data/Pictures
+    docker-compose up -d
+    docker-compose run gallery run import --initial
+
+After importing all images you can import new images by:
+
+.. code-block:: bash
+    :linenos:
+
+    docker-compose run gallery run import --update
+    # For cron update task use -T to disable pseudo-tty allocation
+    #docker-compose run -T gallery run import --update

@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2022-07-15
+
+### Added
+
+- database: Honor date from meta sidecars
+- webapp: Use shorten id in links against history attacks
+- webapp: Improve database chunk size adjustment based on response times
+- webapp: Improve caching with hashed asset filenames
+- webapp: Add image and video amount to year list
+- webapp: Improve UI by fetching data in separate web worker
+- extractor: Improve low powered api server with timout and concurrent parameter
+
+### Fixed
+
+- webapp: Fix preview sizes in stream
+- bin: Raise node version to v16.16.0 to general fix security issues
+- webapp: Fix data mapping for initial state
+- database: Speedup id grouping
+- fetch: Fix query with polluted text cache
+- export: Fix query with polluted text cache
+- webapp: Fix relative resources from base URI
+- webapp: Fix previews of smaller images
+- docker: Fix docker-compose setup
+
 ## [1.4.1] - 2022-03-26
 
 ### Fixed
