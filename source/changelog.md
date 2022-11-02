@@ -5,9 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] - 2022-11-02
+
+### Added
+
+- extractor: Log warning if public api server is used
+- webapp: Add map feature
+- index: Add filter option for maximum file size
+- webapp: Improve search by subfolder
+- webapp: Improve parallel fetch of database
+
+### Fixed
+
+- webapp: Fix timeline scrollbar on iOS (partially)
+- extractor: Fix video log for docker on ARM
+- extractor: Fix video poster to first frame
+- database: Use geo locations from sidecars
+- webapp: Fix updates of year view while loading
+
 ## [1.6.1] - 2022-08-13
 
-## Fixed
+### Fixed
 
 - webapp: Fix 404 empty events response
 

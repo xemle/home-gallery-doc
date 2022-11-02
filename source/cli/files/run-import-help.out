@@ -14,4 +14,6 @@ Options:
   -c, --config          Configuration file       [default: "gallery.config.yml"]
   -i, --initial         Run initial incremental import                 [boolean]
   -u, --update          Check and import new files                     [boolean]
+  -s, --small-files     Import only small files up to 20MB to exclude big files
+                        such as videos to speed up the initial import  [boolean]
   -h, --help            Show help                                      [boolean]

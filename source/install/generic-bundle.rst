@@ -21,8 +21,8 @@ Quickstart
 .. code-block:: bash
     :linenos:
 
-    curl -sL https://dl.home-gallery.org/dist/latest/home-gallery-latest-all-generic.tar.gz -o gallery.tar.gz
-    tar xf gallery.tar.gz
+    curl -sL https://dl.home-gallery.org/dist/latest/home-gallery-latest-all-generic.tar.gz -o home-gallery.tar.gz
+    tar xf home-gallery.tar.gz
     cd home-gallery
     ./gallery.js run init --source ~/Pictures
     # Edit gallery.config.yml and set native commands

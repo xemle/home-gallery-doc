@@ -52,6 +52,6 @@ You can customize and build the docker image by your own
 
 .. code-block:: bash
 
-    git checkout https://github.com/xemle/home-gallery.git
+    git clone https://github.com/xemle/home-gallery.git
     cd home-gallery
     docker build -t home-gallery .

@@ -10,9 +10,9 @@ Quickstart
 .. code-block:: bash
     :linenos:
 
-    git checkout https://github.com/xemle/home-gallery.git
+    git clone https://github.com/xemle/home-gallery.git
     cd home-gallery
-    npm install
+    npm install --force
     npm run build
     ./gallery.js run init --source ~/Pictures
     ./gallery.js run server &
