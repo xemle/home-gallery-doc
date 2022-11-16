@@ -8,6 +8,7 @@ binary dependencies like `node.js <https://nodejs.org>`_,
 It requires following binaryies preinstalled on your system:
 
 - NodeJS LTS v16 (v14 should also work)
+- perl
 - ffmpeg
 - ffprobe
 - vipsthumbnail (via vips-tools) or convert (via ImageMagick)
@@ -25,6 +26,17 @@ Quickstart
     tar xf home-gallery.tar.gz
     cd home-gallery
     ./gallery.js run init --source ~/Pictures
-    # Edit gallery.config.yml and set native commands
+    # Edit gallery.config.yml and set native commands, see example below
     ./gallery.js run server &
     ./gallery.js run import --initial
+
+Example configuration part for extractor:
+
+.. code-block:: yaml
+    :linenos:
+
+    extractor:
+      useNative:
+        - vipsthumbnail
+        - ffprobe
+        - ffmpeg
