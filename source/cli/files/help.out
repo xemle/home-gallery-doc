@@ -6,6 +6,7 @@ Commands:
   gallery.js database     Build database from file indices, extracted meta data
                           and preview files from the storage
   gallery.js server       Start web server
+  gallery.js storage      Storage utils
   gallery.js export       Create a static export
   gallery.js fetch        Fetch and merge from remote
   gallery.js cast         Cast media slideshow to Google Chromecast
@@ -24,4 +25,4 @@ Options:
   -c, --config          Configuration file       [default: "gallery.config.yml"]
   -h, --help            Show help                                      [boolean]
 
-(c) 2021 HomeGallery - https://home-gallery.org
+(c) 2022 HomeGallery - https://home-gallery.org

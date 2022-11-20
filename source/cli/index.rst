@@ -125,6 +125,16 @@ The fetch command
 .. literalinclude:: files/fetch-help.out
     :language: bash
 
+storage command
+------------------
+
+The storage command
+
+* Purges unused and orphan files
+
+.. literalinclude:: files/storage-purge-help.out
+    :language: bash
+
 cast command
 ------------------
 

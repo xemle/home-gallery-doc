@@ -16,6 +16,7 @@ $CLI run import -h > $CLI_FILES/run-import-help.out
 for COMMAND in "export" fetch cast; do
   $CLI $COMMAND -h > $CLI_FILES/$COMMAND-help.out
 done
+$CLI storage purge -h > $CLI_FILES/storage-purge-help.out
 
 cp $GALLERY_HOME/gallery.config-example.yml source/configuration/files
 cp $GALLERY_HOME/docker-compose.yml source/install/files

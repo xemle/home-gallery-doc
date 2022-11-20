@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.2] - 2022-11-20
+
+### Fixed
+
+- Fix binary build
+
+## [1.8.1] - 2022-11-20
+
+### Fixed
+
+- Fix docker and binary build with pnpm
+
+## [1.8.0] - 2022-11-20
+
+### Added
+
+- cli: Add storage purge command
+- export: Add --edit option to enable edit menu
+- fetch: Add --delete option to remove non existing local files
+- server: Add base path option
+
+### Changed
+
+- export: Disable edit menu by default. Use --edit to enable it
+- webapp: Upgrade react router
+- Replace lerna by pnpm to build the project
+- Upgrade to node 18
+- webapp: Upgrade react to 18.x
+- webapp: Replace easy-peasy by zustand
+
+### Fixed
+
+- webapp: Fix toggle of selected media
+- webapp: Fix single view for not yet loaded media
+- webapp: Fix pre-loading of previews
+
 ## [1.7.0] - 2022-11-02
 
 ### Added

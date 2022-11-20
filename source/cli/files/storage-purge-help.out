@@ -1,0 +1,18 @@
+gallery.js storage purge
+
+Purge orphean storage files
+
+Options:
+      --version         Show version number                            [boolean]
+  -l, --log-level       console log level
+         [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
+                                                               [default: "info"]
+  -L, --log-file        Log file
+      --log-file-level  Log file level
+         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
+                                                                        "debug"]
+  -s, --storage         Storage directory                             [required]
+  -d, --database        Database file                                 [required]
+  -i, --index           Optional index file                              [array]
+  -n, --dry-run         Do not perform any writes
+  -h, --help            Show help                                      [boolean]

@@ -21,4 +21,5 @@ Options:
   -q, --query           Search query for matching entries               [string]
   -b, --base-path       Base path of static page. e.g. "/gallery"
                                                          [string] [default: "/"]
+      --edit            Enable edit menu              [boolean] [default: false]
   -h, --help            Show help                                      [boolean]
