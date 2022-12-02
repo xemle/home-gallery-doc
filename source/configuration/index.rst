@@ -14,7 +14,7 @@ In a bare minimum configuration you need to define your media directories:
     :linenos:
 
     sources:
-      - dir: ~/Pictures
+      - ~/Pictures
 
 By default the configuration files are stored to ``~/.config/home-gallery``
 and the previews are stored in ``~/.cache/home-gallery/storage``.
