@@ -22,7 +22,7 @@ Options:
       --log-file-level  Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
-  -c, --config          Configuration file       [default: "gallery.config.yml"]
+  -c, --config          Configuration file
   -h, --help            Show help                                      [boolean]
 
 (c) 2022 HomeGallery - https://home-gallery.org

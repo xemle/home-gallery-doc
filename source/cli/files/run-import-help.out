@@ -11,7 +11,7 @@ Options:
       --log-file-level  Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
-  -c, --config          Configuration file       [default: "gallery.config.yml"]
+  -c, --config          Configuration file
   -i, --initial         Run initial incremental import                 [boolean]
   -u, --update          Check and import new files                     [boolean]
   -s, --small-files     Import only small files up to 20MB to exclude big files
