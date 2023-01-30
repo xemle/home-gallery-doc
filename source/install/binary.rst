@@ -26,7 +26,7 @@ For docker containers theses directories are different.
 .. note::
 
     On Windows the app might be blocked by the anti virus application
-    and should be allowed manually.
+    and should be allowed manually. The extracted files can be found at %temp% directory.
 
 .. note::
 
