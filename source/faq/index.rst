@@ -39,15 +39,13 @@ original space.
 How long does the initial setup take?
 -------------------------------------
 
-It depends on the amount and images and videos. On the initial
+It depends on the amount of images and videos and on your host CPU power.
+On the initial
 run all preview images and videos needs to be calculated. See
 design desisions for :ref:`precalculations <design-decision-prerendering>`.
 
 For images you have think in hours or days. For videos in days
-or weeks. For that reason it is a good idea to start with some
-sub directories and exclude video files like AVI, MOV, MPEG or MP4
-files. Process further partent directories or videos later
-for you need and patience.
+or weeks.
 
 Use following exclude file to process only image files (JPG and PNG):
 
@@ -55,13 +53,17 @@ Use following exclude file to process only image files (JPG and PNG):
     :language: text
 
 Due the internal structure already processed previews are not
-recalculated later.
+recalculated later and this needs to be done only once. Even if the
+image files are renamed or moved to other directories and their
+file content does not change.
 
 Why is a progress indicator for all files is missing?
 -----------------------------------------------------
 
 TL;DR the current non-progress state is on purpose. The recommended
-import is the initial (progressive) import via ``./gallery run import --initial``.
+import is the initial (incemental) import via ``./gallery run import --initial``.
+As of v1.10.0 the source directories are automatically watched and
+imported by the server by default.
 
 Looong version: Progress information on long taking processes like importing a
 gallery data is awesome. The assumption is that a user imports 50k - 100k media
@@ -81,16 +83,31 @@ videos and host machine.
 
 Since the assumed standard user wants to see early results, the recommended import
 of an archive should be incremental (or by chunks) via
-``./gallery run import --initial``. Than the files are indexed and processed in chunks
+``./gallery run import --initial``. Than the files are indexed and processed in batches and chunks
 and the database is build successive. The gallery will reload automatically when the
 database changes. So the user sees some pictures early while the whole archive
 import is in progress for weeks.
+
+As of v1.10.0 the import of source directories is done in 3 batch steps:
+
+* Import all files smaller than 20 MB which targets mainly images
+* Import all files smaller than 200 MB which targets short videos
+* Import other files for longer videos which needs time for transconding
+
+Each batch is done in chunks (some file amounts). E.g. on the first
+run only 10 files smaller than 20 MB are imported. Than 20 files
+will be imported than a bit more. The chunks increase depending on
+the file amount in the file index.
+
+The batch order and the chunk sizes ensure that a user get reasonable
+feedback of the process while fitting the internal data structure
+and building blocks of file index, extractor and database builder.
 
 The internals of this progress is done via the indexer and the ``--add-limits``
 parameter listed by ``./gallery index -h`` (see also the
 `source comments <https://github.com/xemle/home-gallery/blob/master/packages/index/src/limit-filter.js>`_).
 This uses the gallery characteristic that the gallery knows only the files, which
-are indexed. So the indexer stops after adding some new files (afterwards these new
+are indexed or known by the file index. So the indexer stops after adding some new files (afterwards these new
 files are processed, the database is updated, new files are indexed and so on and
 so forth).
 
@@ -126,6 +143,32 @@ devices the similarity comparison takes less than 500ms for about 100,000
 images.
 
 Exact limits, factors or scaling should be extracted from the source.
+
+I want to start all over, how do I reset the gallery?
+-----------------------------------------------------
+
+There are cases where you want to start all over. Some cases are:
+
+* You evaluated the gallery and want to import all your data
+* You use your private API server via docker compose
+* You migrate the gallery to another host
+
+It is recommended not to delete everything and starting from a blank page.
+Precalculation of videos and images are expensive.
+
+The best way for a reset is to keep following files and directories
+
+* ``gallery.config.yml``
+* ``events.db`` (if any)
+* The storage directory
+
+This keeps your configuration of the source directories, your manual tags
+in ``events.db`` and the precalulated preview images and videos from
+the storate. The hard manual work of tags and the CPU intense previews
+can be reused again.
+
+Than you can just delete the file indices (all ``*.idx`` files) and start the server.
+The server will automatically start to re-import your media.
 
 Do I need to delete the storage directory?
 ------------------------------------------

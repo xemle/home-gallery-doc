@@ -20,6 +20,13 @@ On file index update known files do not need to be updated. Known
 files are detected by file path and inode. Other strategies are
 supported, too.
 
+.. note::
+    The file index is used to have a filtered view on your files
+    of your source directories.
+    The gallery handles only files which are listed in the file index.
+    To exclude files or folders in the gallery it is sufficient
+    to add exclude patterns on the source directories.
+
 Extractor
 ^^^^^^^^^
 
@@ -78,3 +85,12 @@ Export
 Responsibilities:
 
 * Export static web site from a subset
+
+Fetch
+^^^^^
+
+.. uml:: plantuml/fetch.plantuml
+
+Responsibilities:
+
+* Fetch a (subset) of a remote gallery and merge it into the local gallery

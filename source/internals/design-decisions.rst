@@ -62,7 +62,7 @@ The main data structure is encoded in JSON format. JSON is the common data excha
 format of the web. It can be read by machines but also by human, which helps
 debugging problems.
 
-It might be stored plain, compressed by gzip or as line-delimited JSON in the HomeGallery.
+It might be stored plain, compressed by gzip or as newline-delimited JSON in the HomeGallery.
 
 Database
 ^^^^^^^^

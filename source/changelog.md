@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] - 2023-06-13
+
+## Added
+
+- server: Watch sources while running the server
+- cli: Add json format for console logger
+- cli: Add watch mode of run import command
+
+### Changed
+
+- bundle: Rewrite dependency resolver
+- logger: Log ISO timestamp instead of epoch
+- cli: Batch and increase file sizes on initial import
+- index: Keep known files on max size filter
+
+### Fixed
+
+- webapp: Fix vanished media in single view
+- database: Fix preview paths on Windows hosts
+- server: Fix database watcher
+- cli: Honor custom server port in `gallery.config.yml`
+
 ## [1.9.0] - 2023-01-11
 
 ### Added

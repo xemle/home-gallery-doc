@@ -3,16 +3,17 @@ gallery.js run init
 Initialize the gallery configuration
 
 Options:
-      --version         Show version number                            [boolean]
-  -l, --log-level       console log level
+      --version          Show version number                           [boolean]
+  -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-                                                               [default: "info"]
-  -L, --log-file        Log file
-      --log-file-level  Log file level
+      --log-json-format  Log output format in json                     [boolean]
+  -L, --log-file         Log file
+      --log-file-level   Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
-  -c, --config          Configuration file
-  -s, --source          Initial source directory or directories
+  -c, --config           Configuration file
+  -s, --source           Initial source directory or directories
                                                               [array] [required]
-  -f, --force           Force, overwrite existing configuration        [boolean]
-  -h, --help            Show help                                      [boolean]
+  -f, --force            Force, overwrite existing configuration       [boolean]
+  -h, --help             Show help                                     [boolean]
+      --level                                                   [default: debug]

@@ -8,7 +8,6 @@ To run your gallery at home you need to
 * install the software
 * initialize the configuration
 * run the local web server
-* import your media sources
 
 HomeGallery can run through
 

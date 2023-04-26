@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'HomeGallery'
-copyright = '2021, Sebastian Felis'
+copyright = '2023, Sebastian Felis'
 author = 'Sebastian Felis'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1.0'
+release = '1.10.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -61,4 +61,4 @@ html_static_path = ['_static']
 
 # Sitemap configuration
 html_baseurl = 'https://docs.home-gallery.org/'
-html_extra_path = ['robots.txt']
+html_extra_path = ['favicon.ico', 'robots.txt']

@@ -53,9 +53,9 @@ run server command
     :language: bash
 
 .. note::
-    The ``server`` command starts only the local web server. Photos
-    and videos have to be imported manually to update the media
-    database
+    The ``server`` command starts the local web server.
+    Source directories are imported and watched for changes
+    by default
 
 run import command
 ------------------
@@ -65,6 +65,7 @@ The import command
 * creates or updates the file indices
 * extracts meta data and calculates previews
 * build the media database
+* watch for file changes
 
 .. literalinclude:: files/run-import-help.out
     :language: bash
@@ -89,6 +90,11 @@ The *full import* processes all files and checks for missing meta data
 or preview files. This mode should be run after your finished the
 initial import - just to be safe. This mode is slow since all
 media files, meta data and previews needs to be checked.
+
+.. note::
+    The watch mode should use the polling mechanism for larger, slow
+    or remote media repositories. An polling interval of at least
+    5 min is recommended.
 
 .. note::
     The ``import`` command can run in parallel to the server.

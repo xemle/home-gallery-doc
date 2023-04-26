@@ -14,15 +14,16 @@ Commands:
   gallery.js run          Run common tasks
 
 Options:
-      --version         Show version number                            [boolean]
-  -l, --log-level       console log level
+      --version          Show version number                           [boolean]
+  -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-                                                               [default: "info"]
-  -L, --log-file        Log file
-      --log-file-level  Log file level
+      --log-json-format  Log output format in json                     [boolean]
+  -L, --log-file         Log file
+      --log-file-level   Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
-  -c, --config          Configuration file
-  -h, --help            Show help                                      [boolean]
+  -c, --config           Configuration file
+  -h, --help             Show help                                     [boolean]
+      --level                                                   [default: debug]
 
-(c) 2022 HomeGallery - https://home-gallery.org
+(c) 2023 HomeGallery - https://home-gallery.org

@@ -43,7 +43,23 @@ Quickstart
     chmod 755 gallery
     ./gallery run init --source ~/Pictures
     ./gallery run server &
-    ./gallery run import --initial
 
 While your media files are imported open your HomeGallery at
 `localhost:3000 <http://localhost:3000>`_ in your browser.
+
+Update the gallery
+^^^^^^^^^^^^^^^^^^
+
+To update the gallery software, please stop your current server, download the latest version and start the new version.
+
+Please run the import command to rebuild the database. This step will add new features and fix missing database entries. If all your media is already imported the import can be done in parallel with the server command.
+
+.. code-block:: bash
+    :linenos:
+
+    # stop the current server
+    mv gallery gallery.old
+    curl -sL https://dl.home-gallery.org/dist/latest/home-gallery-latest-linux-x64 -o gallery
+    chmod 755 gallery
+    ./gallery run import
+    ./gallery run server &

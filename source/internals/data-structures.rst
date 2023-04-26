@@ -88,6 +88,11 @@ Most data have JSON or binary format.
    |       ...
    ...
 
+.. note::
+    In most cases the storage directory does not need to be deleted. It is
+    assumed that the disk space at home is available (and the costs for that is cheap).
+    The files in the storage are reused on file renames ore file moves to save CPU time.
+
 Database
 ^^^^^^^^
 
@@ -152,7 +157,7 @@ Events
 
 All user interaction (currently limited to image tagging) are stored in a event database.
 
-Events are stored as plain line-delimited JSON. This data contains only manual
+Events are stored as plain newline-delimited JSON (AKA ndjson). This data contains only manual
 actions and should be treated with care.
 
 .. code-block::
@@ -177,3 +182,8 @@ actions and should be treated with care.
       "date": "2020-10-07T07:04:46.912Z"
     }
     ...
+
+.. note::
+    While the database can be recreated, the events holds your manual work
+    which gets lost on deletion. Delete the events file only if you know
+    what you are doing.

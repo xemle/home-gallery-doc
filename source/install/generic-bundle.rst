@@ -28,7 +28,22 @@ Quickstart
     ./gallery.js run init --source ~/Pictures
     # Edit gallery.config.yml and set native commands, see example below
     ./gallery.js run server &
-    ./gallery.js run import --initial
+
+Update the gallery
+^^^^^^^^^^^^^^^^^^
+
+To update the gallery software, please stop your current server, download the latest version and start the new version.
+
+Please run the import command to rebuild the database. This step will add new features and fix missing database entries. If all your media is already imported the import can be done in parallel with the server command.
+
+.. code-block:: bash
+    :linenos:
+
+    # stop the current server
+    # downlaod and extract the newest generic bundle
+    # change directory to home-gallery
+    ./gallery.js run import
+    ./gallery.js run server &
 
 Example configuration part for extractor:
 

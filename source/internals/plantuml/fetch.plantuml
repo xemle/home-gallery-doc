@@ -1,0 +1,19 @@
+@startuml
+card Server [
+  Server
+]
+card Fetch [
+  Fetch
+]
+folder Storage {
+}
+database Database {
+}
+database Events {
+}
+
+Server -down-> Fetch
+Fetch -down-> Storage
+Fetch -down-> Database
+Fetch -down-> Events
+@enduml

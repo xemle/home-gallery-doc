@@ -39,11 +39,31 @@ Quickstart
       -u $(id -u):$(id -g) \
       -p 3000:3000 xemle/home-gallery"
     gallery run init --source /data/Pictures
-    gallery run server &
-    gallery run import --initial
+    gallery run server
 
 While your media files are imported open your HomeGallery at
 `localhost:3000 <http://localhost:3000>`_ in your browser.
+
+.. note::
+    The docker container is configured to poll image sources
+    each 5 minutes for compatibility reasons of slow or
+    large media volumes. Check if inotify through disabled polling by
+    ``GALLERY_WATCH_POLL_INTERVAL=0`` is working for you.
+
+Update the gallery
+^^^^^^^^^^^^^^^^^^
+
+To update the gallery software, please stop your current container, pull the latest image and start a new container.
+
+Please run the import command after an application upgrade to rebuild the database. This step will add new features and fix missing database entries. If all your media is already imported the import can be done while the server is running
+
+.. code-block:: bash
+    :linenos:
+
+    # stop the current container
+    docker pull xemle/home-gallery
+    gallery run import
+    gallery run server
 
 Custom image
 ^^^^^^^^^^^^

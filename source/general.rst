@@ -61,12 +61,12 @@ File Format Features
 Limits
 ------
 
-* There is only one user who can see all media
+* All users see all media
 * Current tested limits are about 400,000 images/videos
 * The whole database is loaded into the browser and requires recent (mobile) devices and internet connection
 * No support for RAW image formats (yet)
-* No downloads of original files
-* Software has beta state and requires some terminal/scripting skills
+* No downloads of original media files
+* It requires some terminal/scripting skills
 * There is limited support on installation and usage
 
 HomeGallery is not ...
