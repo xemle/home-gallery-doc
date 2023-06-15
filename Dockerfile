@@ -12,6 +12,7 @@ RUN pip install \
   myst-parser \
   sphinxcontrib-plantuml \
   sphinxcontrib.asciinema \
+  sphinx-copybutton \
   sphinx_rtd_theme \
   sphinx-sitemap
 

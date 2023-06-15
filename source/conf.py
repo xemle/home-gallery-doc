@@ -34,6 +34,7 @@ extensions = [
   'myst_parser',
   'sphinxcontrib.plantuml',
   'sphinxcontrib.asciinema',
+  'sphinx_copybutton',
   'sphinx_rtd_theme',
   'sphinx_sitemap',
 ]
