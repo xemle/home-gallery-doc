@@ -27,5 +27,7 @@ Options:
                                                                        [boolean]
       --delay              Delay between the images in seconds
                                                            [number] [default: 5]
+      --max-preview-size   Maximum size of preview images
+                                                        [number] [default: 1920]
   -h, --help               Show help                                   [boolean]
       --level                                                   [default: debug]

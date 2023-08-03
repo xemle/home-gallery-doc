@@ -5,9 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.11.0] - 2023-08-03
+
+### Added
+
+- fetch: Add watch option
+- extractor: Optional disable api detections
+- extractor: Add custom ffmpeg args
+- extractor: Add custom preview video size
+- extractor: Add custom preview image sizes
+
+### Changed
+
+- extractor: Upgrade sharp dependency for image resizer
+- logger: Add time prefix (martadinata666)
+
+### Fixed
+
+- index: Fix read stream for empty index
+- webapp: Fix icon paths of PWA webmanifest
+- webapp: Fix database load on bootstrap
+- cli: Fix find config for undefined HOME env
+- extractor: Fix preview video size of portrait videos
+- database: Fix video rotation
+- database: Fix video duration
+
 ## [1.10.0] - 2023-06-13
 
-## Added
+### Added
 
 - server: Watch sources while running the server
 - cli: Add json format for console logger

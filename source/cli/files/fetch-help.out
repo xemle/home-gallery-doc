@@ -19,5 +19,7 @@ Options:
   -s, --storage            Storage directory                          [required]
   -D, --delete             Delete local files which are missing remote for all
                            remote index               [boolean] [default: false]
+  -w, --watch              Watch server for database change and fetch remote on
+                           changes                    [boolean] [default: false]
   -h, --help               Show help                                   [boolean]
       --level                                                   [default: debug]
