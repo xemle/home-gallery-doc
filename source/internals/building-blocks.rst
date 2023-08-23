@@ -77,14 +77,14 @@ Since the database is loaded into the browser, the server acts mainly
 as a static webserver. The main logic such as filtering and sorting is
 executed in the WebApp
 
-Export
-^^^^^^
+Export Meta Data
+^^^^^^^^^^^^^^^^
 
-.. uml:: plantuml/export.plantuml
+.. uml:: plantuml/export-meta.plantuml
 
 Responsibilities:
 
-* Export static web site from a subset
+* Export meta data to XMP sidecar files
 
 Fetch
 ^^^^^
@@ -94,3 +94,13 @@ Fetch
 Responsibilities:
 
 * Fetch a (subset) of a remote gallery and merge it into the local gallery
+
+Export Static Gallery
+^^^^^^^^^^^^^^^^^^^^^
+
+.. uml:: plantuml/export-static.plantuml
+
+Responsibilities:
+
+* Export static web site from a subset
+* Static export requires only an HTTP server such Apache2 or Nginx

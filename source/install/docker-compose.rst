@@ -35,10 +35,27 @@ Quickstart
     large media volumes. Check if inotify through disabled polling by
     ``GALLERY_WATCH_POLL_INTERVAL=0`` is working for you.
 
-Update the gallery
-^^^^^^^^^^^^^^^^^^
+Run the CLI
+^^^^^^^^^^^
 
-To update the gallery software, please pull the latest container and restart your services.
+The CLI with all commands is started via docker compose
+
+.. code-block:: bash
+    :linenos:
+
+    docker compose run gallery -h
+
+This CLI is attached to the pseudo-tty. To run it as background job like in cron jobs, pleas use ``-T`` argument
+
+.. code-block:: bash
+    :linenos:
+
+    docker compose run -T gallery -h
+
+Upgrade the gallery
+^^^^^^^^^^^^^^^^^^^
+
+To upgrade the gallery software, please pull the latest container and restart your services.
 
 Please run the import command after an application upgrade to rebuild the database. This step will add new features and fix missing database entries. If all your media is already imported the import can be done while the server is running
 

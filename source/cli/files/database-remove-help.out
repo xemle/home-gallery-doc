@@ -1,6 +1,6 @@
-gallery.js storage purge
+gallery.js database remove
 
-Purge orphean storage files
+Remove entries by given query
 
 Options:
       --version          Show version number                           [boolean]
@@ -11,9 +11,17 @@ Options:
       --log-file-level   Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
-  -s, --storage          Storage directory                            [required]
-  -d, --database         Database file                                [required]
-  -i, --index            Optional index file                             [array]
-  -n, --dry-run          Do not perform any writes                     [boolean]
+  -d, --database         Database filename
+  -e, --events           Events filename
+  -q, --query            Query to remove from the database   [string] [required]
+  -k, --keep, --inverse  Keep matching entries instead of removing it  [boolean]
+  -n, --dry-run          Do not perform any writes
+  -c, --config           Configuration file
   -h, --help             Show help                                     [boolean]
       --level                                                   [default: debug]
+
+Examples:
+  gallery.js database remove -q             Remove all entries with tag
+  tag:trashed                               "trashed"
+  gallery.js database remove -k -q          Keep all entries with tag "good"
+  tag:good

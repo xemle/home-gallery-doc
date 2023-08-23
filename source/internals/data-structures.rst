@@ -184,6 +184,10 @@ actions and should be treated with care.
     ...
 
 .. note::
+    Please export your meta data to standardized XMP sidecar files so that
+    other photo library applications can read your tags from HomeGallery
+
+.. note::
     While the database can be recreated, the events holds your manual work
     which gets lost on deletion. Delete the events file only if you know
     what you are doing.

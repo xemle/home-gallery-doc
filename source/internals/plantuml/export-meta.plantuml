@@ -1,18 +1,18 @@
 @startuml
-database Storage {
+database FileIndex {
 }
 database Database {
 }
 database Events {
 }
 card Export [
-  Export
+  Export Meta
 ]
-folder "Static site" {
+folder Files {
 }
 
-Storage -down-> Export
+FileIndex -down-> Export
 Database -down-> Export
 Events -down-> Export
-Export -down-> "Static site"
+Export -down-> Files
 @enduml

@@ -30,10 +30,21 @@ Quickstart
 While your media files are imported open your HomeGallery at
 `localhost:3000 <http://localhost:3000>`_ in your browser.
 
-Update the gallery
-^^^^^^^^^^^^^^^^^^
+Run the CLI
+^^^^^^^^^^^
 
-To update the gallery software, please stop your current server, download the latest version and start the new version.
+The CLI with all commands of the app bundle is started via
+
+.. code-block:: bash
+    :linenos:
+
+    node gallery.js -h
+
+
+Upgrade the gallery
+^^^^^^^^^^^^^^^^^^^
+
+To upgrade the gallery software, please stop your current server, download the latest version and start the new version.
 
 Please run the import command to rebuild the database. This step will add new features and fix missing database entries. If all your media is already imported the import can be done in parallel with the server command.
 

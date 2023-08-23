@@ -1,6 +1,11 @@
 FAQ
 ===
 
+How can I support this project?
+-------------------------------
+
+Please read the `CONTRIBUTING guidlines <https://github.com/xemle/home-gallery/blob/master/CONTRIBUTING.md>`_.
+
 What data is requested from public services?
 --------------------------------------------
 

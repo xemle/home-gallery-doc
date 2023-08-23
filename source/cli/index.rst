@@ -1,15 +1,19 @@
 CLI/Command line tool
 =====================
 
-In general it is a command line tool to init the configuration, start the web server
+In general HOmeGallery is a command line tool to init the configuration, start the web server
 and import the media sources. It has further commands to execute sub task to
 
 * Create and update file index of your media directories
 * Extract meta data and calculate previews
 * Build the gallery database
+* Extract meta data to xmp sidecar files
 * Extract static gallery
+* Fetch a remote HomeGallery to the local gallery
+* Stream media to Google Chromecast
 
 You can list the help of available commands and options via ``gallery -h``.
+See the :ref:`install` section how to start the CLI in your environment.
 
 By default it starts in the interactive mode. The ``run`` command should be used
 for scripting, eg. for cron jobs. Other commands can be used in advance use
@@ -106,16 +110,37 @@ media files, meta data and previews needs to be checked.
     a full import to ensure that all meta data and all previews are
     available.
 
-export command
-------------------
+export static command
+---------------------
 
-The export command
+The export meta command
 
 * Exports a static gallery
 * Requires only static webserver like nginx or Apache
 * Supports subset exports via query
 
-.. literalinclude:: files/export-help.out
+.. literalinclude:: files/export-static-help.out
+    :language: bash
+
+export meta command
+-------------------
+
+The export meta command
+
+* Exports meta data to XMP sidecar files
+
+All media with manual tags from HomeGallery are written to XMP sidecar files. By default
+it will create ``<name>.<ext>.xmp`` file. E.g. for the image ``IMG_1234.JPG``
+the sidecar ``IMG_1234.JPG.xmp`` is created. If ``IMG_1234.xmp`` exists it will
+use this file.
+
+The tags are written through `Exiftool <https://exiftool.org>`_ to following namespaces:
+
+* Dublin Core (see `Exiftool dc Tags <https://exiftool.org/TagNames/XMP.html#dc>`_)
+* Digikam (see `Exiftool digiKam Tags <https://exiftool.org/TagNames/XMP.html#digiKam>`_)
+* Lightroom (see `Exiftool lr Tags <https://exiftool.org/TagNames/XMP.html#Lightroom>`_)
+
+.. literalinclude:: files/export-meta-help.out
     :language: bash
 
 fetch command
@@ -131,12 +156,22 @@ The fetch command
 .. literalinclude:: files/fetch-help.out
     :language: bash
 
+database command
+----------------
+
+The database command
+
+* Remove database entries by query
+
+.. literalinclude:: files/database-remove-help.out
+    :language: bash
+
 storage command
 ------------------
 
 The storage command
 
-* Purges unused and orphan files
+* Purges unused and orphan files from the storage directory
 
 .. literalinclude:: files/storage-purge-help.out
     :language: bash

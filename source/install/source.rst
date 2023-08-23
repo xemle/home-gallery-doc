@@ -17,10 +17,20 @@ Quickstart
     ./gallery.js run init --source ~/Pictures
     ./gallery.js run server
 
-Update the gallery
-^^^^^^^^^^^^^^^^^^
+Run the CLI
+^^^^^^^^^^^
 
-To update the gallery software, please stop your current server, fetch the latest master, build the sources and start the new version.
+The CLI with all commands from source is started via
+
+.. code-block:: bash
+    :linenos:
+
+    ./gallery.js -h
+
+Upgrade the gallery
+^^^^^^^^^^^^^^^^^^^
+
+To upgrade the gallery software, please stop your current server, fetch the latest master, build the sources and start the new version.
 
 Please run the import command to rebuild the database. This step will add new features and fix missing database entries. If all your media is already imported the import can be done in parallel with the server command.
 

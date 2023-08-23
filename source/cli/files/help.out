@@ -3,11 +3,10 @@ Usage: gallery.js [global options] <command> [options]
 Commands:
   gallery.js index        File index
   gallery.js extract      Extract meta data and calculate preview files
-  gallery.js database     Build database from file indices, extracted meta data
-                          and preview files from the storage
+  gallery.js database     Database commands
   gallery.js server       Start web server
   gallery.js storage      Storage utils
-  gallery.js export       Create a static export
+  gallery.js export       Export commands
   gallery.js fetch        Fetch and merge from remote
   gallery.js cast         Cast media slideshow to Google Chromecast
   gallery.js interactive  Interactive menu                             [default]
