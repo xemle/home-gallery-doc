@@ -169,6 +169,7 @@ Operands
 ^^^^^^^^
 
 Following operands are used for comparison
+
 .. csv-table:: Operands
    :file: search-operands.csv
    :widths: auto
