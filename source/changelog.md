@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.14.0] - 2023-11-18
+
+### Added
+
+- webapp: Add offline database via IndexedDB
+
+### Changed
+
+- extractor: Set video file extension for custom ffmpeg args
+- Update node LTS to v20
+
+### Fixed
+
+- query: Fix random sort order
+
 ## [1.13.3] - 2023-11-07
 
 ### Fixed
