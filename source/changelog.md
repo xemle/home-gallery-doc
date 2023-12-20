@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.14.5] - 2023-12-20
+
+### Changed
+
+- index: Follow symbolic links
+
+### Fixed
+
+- docker: Set default settings of api server for SoC devices
+- cli: Env overwrites api server config settings
+
+## [1.14.4] - 2023-12-17
+
+### Fixed
+
+- server: Fix cache header for static public files
+- extractor: Fail gracefully on missing perl dependency
+
+## [1.14.3] - 2023-12-12
+
+### Fixed
+
+- extractor: Fix debugging with concurrent one
+- cli: Fix interactive debug tasks
+
+## [1.14.2] - 2023-12-02
+
+### Fixed
+
+- webapp: Disable features by query parameter
+- server: Add configuration to disable webapp features
+
+## [1.14.1] - 2023-11-20
+
+### Fixed
+
+- cli: Fix interactive import tasks
+
 ## [1.14.0] - 2023-11-18
 
 ### Added
