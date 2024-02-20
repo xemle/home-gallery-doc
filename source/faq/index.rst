@@ -169,7 +169,7 @@ The best way for a reset is to keep following files and directories
 
 This keeps your configuration of the source directories, your manual tags
 in ``events.db`` and the precalulated preview images and videos from
-the storate. The hard manual work of tags and the CPU intense previews
+the storage. The hard manual work of tags and the CPU intense previews
 can be reused again.
 
 Than you can just delete the file indices (all ``*.idx`` files) and start the server.
