@@ -31,3 +31,4 @@ Installation Tutorial
 .. include:: app-bundle.rst
 .. include:: generic-bundle.rst
 .. include:: source.rst
+.. include:: others.rst
