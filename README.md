@@ -9,11 +9,11 @@ generated through [sphinx](https://www.sphinx-doc.org).
 ### Build docker image
 
 ```
-docker build -t sphinx-home-gallery .
+docker build -t home-gallery-doc .
 ```
 
 ### Build Documentation
 
 ```
-docker run -ti --rm -u $(id -u):$(id -g) -v $(pwd):/docs sphinx-home-gallery make html
+docker run -ti --rm -u $(id -u):$(id -g) -v $(pwd):/docs home-gallery-doc make html
 ```
