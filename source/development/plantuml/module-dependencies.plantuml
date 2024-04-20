@@ -1,0 +1,49 @@
+@startuml
+[cli] --> [index]
+[cli] --> [database]
+[cli] --> [export-meta]
+[cli] --> [extractor]
+[cli] --> [server]
+[cli] --> [fetch]
+[cli] --> [logger]
+
+[index] --> [common]
+[index] --> [logger]
+
+[extractor] --> [common]
+[extractor] --> [index]
+[extractor] --> [logger]
+[extractor] --> [storage]
+[extractor] --> [stream]
+
+[database] --> [common]
+[database] --> [index]
+[database] --> [logger]
+[database] --> [storage]
+[database] --> [stream]
+
+[events] --> [logger]
+
+[server] --> [common]
+[server] --> [database]
+[server] --> [events]
+[server] --> [logger]
+[server] --> [query]
+[server] --> [webapp]
+
+[fetch] --> [common]
+[fetch] --> [database]
+[fetch] --> [events]
+[fetch] --> [logger]
+[fetch] --> [query]
+[fetch] --> [storage]
+
+[export-meta] --> [common]
+[export-meta] --> [index]
+[export-meta] --> [database]
+[export-meta] --> [events]
+[export-meta] --> [logger]
+
+[webapp] --> [events]
+[webapp] --> [query]
+@enduml

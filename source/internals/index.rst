@@ -1,5 +1,7 @@
+.. _internals:
+
 Internals
-=====================
+=========
 
 .. include:: workflow.rst
 .. include:: building-blocks.rst

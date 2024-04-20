@@ -28,6 +28,7 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
    webapp/index
    api-server/index
    faq/index
+   development/index
    changelog
    internals/index
 
