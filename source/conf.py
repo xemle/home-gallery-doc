@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'HomeGallery'
-copyright = '2023, Sebastian Felis'
+copyright = '2024, Sebastian Felis'
 author = 'Sebastian Felis'
 
 # The full version, including alpha/beta/rc tags
