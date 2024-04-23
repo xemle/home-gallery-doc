@@ -84,13 +84,20 @@ build the code and run the tests.
     cd home-gallery
     git clone git@github.com:xemle/home-gallery-e2e-data.git data
     npm install
+    npm run postinstall --workspaces --if-present
     npm run clean
     npm run build
     npm run test
     npm run test:e2e
 
-Some modules have a `dev` npm script which watches for changes and rebuilding the code
-on file changes.
+Some modules have a `dev` or a `watch` npm script which watches for changes
+and rebuilding the code on file changes. Please check their scripts in ``package.json``
+for details.
+
+.. note::
+
+    To run the e2e tests, you need to have ImageMagic and vips-tools installed
+    to test native extractor settings.
 
 Development
 -----------
@@ -164,6 +171,8 @@ Each test scenario is filed in a separate directory.
 
 Within a single output folder the ``cli.log`` keeps the log of the cli calls. While the ``e2e.log`` holds the console
 output of the cli calls. With the tool `jq <https://jqlang.github.io/jq/>`_ you can inspect these files.
+
+Specific tests can be run via tags like ``npm run test:e2e -- --tags extractor``.
 
 Documentation
 -------------

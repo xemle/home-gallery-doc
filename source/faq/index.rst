@@ -8,6 +8,36 @@ How can I support this project?
 
 Please read the `CONTRIBUTING guidlines <https://github.com/xemle/home-gallery/blob/master/CONTRIBUTING.md>`_.
 
+How to synchronize or upload my photos from mobile device?
+----------------------------------------------------------
+
+HomeGallery does not support file synchronization from mobile devices and
+leave this topic to other great solutions.
+
+We recommend to use `SyncThing <https://syncthing.net/>`_ to synchronize
+your photos from your devices to a single NAS.
+
+How to backup my photos?
+------------------------
+
+HomeGallery does not support backups for your pictures and leave this
+topic to other great solutions.
+
+We recommend to use `BorgBackup <https://www.borgbackup.org/>`_ or `Restic <https://restic.net/>`_
+for your self hosted backups. They support deduplicated, compressed and encrypted backups.
+
+How to backup my gallery?
+-------------------------
+
+At bare minimum you should regulary backup your ``events.db`` file in
+your configuration folder. ``events.db`` contains your manual tag events.
+All other files can be recreated.
+
+You should backup your configuration file, configuration folder and
+your storage folder.
+The configuration folder holds the file index files, the database, the events and the logs.
+The storage folder holds all preview files.
+
 What data is requested from public services?
 --------------------------------------------
 
@@ -123,7 +153,7 @@ How does the image similarity work?
 
 The image similarity or reverse image search works through a pretrained
 image net of machine learning. It uses pretrained Google's mobilenet to
-extract an similarity vector which is than compared agains other images.
+extract a similarity vector which is than compared agains other images.
 
 In detail is uses the embeddings layer for the similarity vector and optimizes
 (or reduces the size) for the browser. The embeddings layer is retrieved
