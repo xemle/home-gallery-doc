@@ -240,9 +240,9 @@ To show all selected media click the eye icon.
 
 After you are done the the selection you can assign tags to the selection by clicking the check icon.
 
-.. figure:: images/dialog-tag.png
+.. figure:: images/multi-edit-tag-dialog.png
 
-   Edit dialog
+   Edit dialog for multiple selected media
 
 In the edit dialog you can add comma separated tags to the selected images. A minus prefix removes a tag.
 
@@ -251,3 +251,13 @@ The input *vacation, rome, -city* adds the tag *vacation* and the tag *rome* but
 .. note::
    After new tags are submitted, the current selection stays.
    You need to reset the selection by *Reset all* in the edit navigation bar manually if required.
+
+You can also edit the tags from a single image via the details view
+
+.. figure:: images/media-detail-view.png
+
+   Media detail view
+
+.. figure:: images/single-edit-tag-dialog.png
+
+   Edit dialog for single media
