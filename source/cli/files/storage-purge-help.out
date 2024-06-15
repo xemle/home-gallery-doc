@@ -11,8 +11,11 @@ Options:
       --log-file-level   Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
-  -s, --storage          Storage directory                            [required]
-  -d, --database         Database file                                [required]
+  -c, --config           Configuration file
+      --auto-config      Search for configuration on common configuration
+                         directories                   [boolean] [default: true]
+  -s, --storage          Storage directory
+  -d, --database         Database file
   -i, --index            Optional index file                             [array]
   -n, --dry-run          Do not perform any writes                     [boolean]
   -h, --help             Show help                                     [boolean]

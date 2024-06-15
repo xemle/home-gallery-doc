@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.1] - 2024-06-15
+
+### Added
+
+- cli: Read settings from config for most commands
+- database: Read settings from config
+
+### Changed
+
+- docker: Disable armv6 and armv7 builds due github build failures
+
+### Fixed
+
+- docker: Raise node version v20
+- webapp: No browser history for singe media navigation
+- webapp: search tags with blanks in Detail
+
+## [1.15.0] - 2024-01-27
+
+### Changed
+
+- webapp: Rewrite css using tailwindcss
+
+## [1.14.6] - 2024-01-04
+
+### Fixed
+
+- database: Fix dimensions on videos
+
 ## [1.14.5] - 2023-12-20
 
 ### Changed

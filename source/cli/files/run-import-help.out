@@ -12,6 +12,8 @@ Options:
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
   -c, --config               Configuration file
+      --auto-config          Search for configuration on common configuration
+                             directories               [boolean] [default: true]
   -i, --initial              Run initial incremental import            [boolean]
   -u, --update               Check and import new files                [boolean]
   -s, --small-files          Import only small files up to 20MB to exclude big

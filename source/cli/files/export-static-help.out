@@ -11,6 +11,9 @@ Options:
       --log-file-level   Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
+  -c, --config           Configuration file
+      --auto-config      Search for configuration on common configuration
+                         directories                   [boolean] [default: true]
   -d, --database         Database filename                            [required]
   -e, --events           Events filename
   -s, --storage          Storage directory                            [required]

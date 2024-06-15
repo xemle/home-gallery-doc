@@ -17,5 +17,7 @@ Options:
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
   -c, --config           Configuration file
+      --auto-config      Search for configuration on common configuration
+                         directories                   [boolean] [default: true]
   -h, --help             Show help                                     [boolean]
       --level                                                   [default: debug]

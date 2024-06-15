@@ -27,5 +27,8 @@ Options:
       --download-all       Download preview files from all remote entries. Use
                            this option if preview files are missing from remote
                                                       [boolean] [default: false]
+  -c, --config             Configuration file
+      --auto-config        Search for configuration on common configuration
+                           directories                 [boolean] [default: true]
   -h, --help               Show help                                   [boolean]
       --level                                                   [default: debug]

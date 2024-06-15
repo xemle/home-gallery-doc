@@ -11,12 +11,14 @@ Options:
       --log-file-level   Log file level
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
+  -c, -c, --config       Configuration file
+      --auto-config      Search for configuration on common configuration
+                         directories                   [boolean] [default: true]
   -d, --database         Database filename
   -e, --events           Events filename
   -q, --query            Query to remove from the database   [string] [required]
   -k, --keep, --inverse  Keep matching entries instead of removing it  [boolean]
   -n, --dry-run          Do not perform any writes
-  -c, --config           Configuration file
   -h, --help             Show help                                     [boolean]
       --level                                                   [default: debug]
 

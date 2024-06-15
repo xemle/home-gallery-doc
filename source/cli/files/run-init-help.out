@@ -12,6 +12,8 @@ Options:
          [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
                                                                         "debug"]
   -c, --config           Configuration file
+      --auto-config      Search for configuration on common configuration
+                         directories                   [boolean] [default: true]
   -s, --source           Initial source directory or directories
                                                               [array] [required]
   -f, --force            Force, overwrite existing configuration       [boolean]
