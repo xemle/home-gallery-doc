@@ -2,7 +2,7 @@ Docker
 ------
 
 HomeGallery offers docker image at `xemle/home-gallery <https://hub.docker.com/r/xemle/home-gallery>`_
-(amd64, arm64, arm/v7 and arm/v6 architecture).
+(amd64 and arm64 architecture).
 These image are build via `GitHub actions <https://github.com/xemle/home-gallery/actions>`_.
 
 Data volume structure
