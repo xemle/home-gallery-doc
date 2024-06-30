@@ -3,6 +3,14 @@
 FAQ
 ===
 
+Where can I ask questions?
+--------------------------
+
+Please ask any questions on the community chat `gitter <https://gitter.im/home-gallery/community>`_
+or `discord <https://discord.gg/6YungJ9Y>`_.
+
+HomeGallery is a spare time project. My timezone is Europe/Berlin. Usually I answer questions at 21h same or following day.
+
 How can I support this project?
 -------------------------------
 
