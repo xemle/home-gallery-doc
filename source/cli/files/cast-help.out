@@ -6,21 +6,21 @@ Options:
       --version            Show version number                         [boolean]
   -l, --log-level          Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-      --log-json-format    Log output format in json                   [boolean]
+  -J, --log-json-format    Log output format in json                   [boolean]
   -L, --log-file           Log file
       --log-file-level     Log file level
-         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
-                                                                        "debug"]
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
   -u, --server-url, --url  Gallery server url                         [required]
   -q, --query              Search query                                 [string]
       --proxy              Use HTTP proxy. Chromecast does not support internal
                            DNS and self-signed certificates. The proxy bypasses
-                           this limit. Use --no-proxy to disable it for public
-                           galleries                   [boolean] [default: true]
+                           this limit. Use --no-proxy to disable it for public g
+                           alleries                    [boolean] [default: true]
       --proxy-ip           Use given IP for proxy. Auto detect if not given
   -p, --port               Proxy port                  [number] [default: 38891]
-  -k, --insecure           Do not verify HTTPS certificates. Disable it by
-                           --no-insecure if you know what you do       [boolean]
+  -k, --insecure           Do not verify HTTPS certificates. Disable it by --no-
+                           insecure if you know what you do            [boolean]
   -s, --random, --shuffle  Randomize playback. Use --no-random for linear order
                                                                        [boolean]
   -r, --reverse            Reverse order. Default order is by date oldest first

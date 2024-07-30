@@ -11,16 +11,17 @@ Commands:
   gallery.js cast         Cast media slideshow to Google Chromecast
   gallery.js interactive  Interactive menu                             [default]
   gallery.js run          Run common tasks
+  gallery.js plugin       Plugin handling
 
 Options:
       --version          Show version number                           [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-      --log-json-format  Log output format in json                     [boolean]
+  -J, --log-json-format  Log output format in json                     [boolean]
   -L, --log-file         Log file
       --log-file-level   Log file level
-         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
-                                                                        "debug"]
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
   -c, --config           Configuration file
   -h, --help             Show help                                     [boolean]
       --level                                                   [default: debug]

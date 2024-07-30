@@ -6,29 +6,29 @@ Options:
       --version              Show version number                       [boolean]
   -l, --log-level            Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-      --log-json-format      Log output format in json                 [boolean]
+  -J, --log-json-format      Log output format in json                 [boolean]
   -L, --log-file             Log file
       --log-file-level       Log file level
-         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
-                                                                        "debug"]
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
   -c, --config               Configuration file
-      --auto-config          Search for configuration on common configuration
-                             directories               [boolean] [default: true]
+      --auto-config          Search for configuration on common configuration di
+                             rectories                 [boolean] [default: true]
   -i, --initial              Run initial incremental import            [boolean]
   -u, --update               Check and import new files                [boolean]
-  -s, --small-files          Import only small files up to 20MB to exclude big
-                             files such as videos to speed up the initial import
+  -s, --small-files          Import only small files up to 20MB to exclude big f
+                             iles such as videos to speed up the initial import
                                                                        [boolean]
   -w, --watch                Watch files for changes and run import on changes
                                                                        [boolean]
-      --watch-delay          Delay import after file change detection in
-                             seconds. A new file change refreshes the previous
-                             delay                        [number] [default: 10]
-      --watch-max-delay      Maximum delay after file change detection in
-                             seconds. Set it to 0 for immediate import on file
-                             change                      [number] [default: 600]
-      --watch-poll-interval  Use poll interval in seconds. If set 0 watch mode
-                             uses fs events if available.  [number] [default: 0]
+      --watch-delay          Delay import after file change detection in seconds
+                             . A new file change refreshes the previous delay
+                                                          [number] [default: 10]
+      --watch-max-delay      Maximum delay after file change detection in second
+                             s. Set it to 0 for immediate import on file change
+                                                         [number] [default: 600]
+      --watch-poll-interval  Use poll interval in seconds. If set 0 watch mode u
+                             ses fs events if available.   [number] [default: 0]
       --import-on-start      Run import on watch start [boolean] [default: true]
   -h, --help                 Show help                                 [boolean]
       --level                                                   [default: debug]

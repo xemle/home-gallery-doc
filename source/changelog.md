@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- plugin: Initial plugin manager (experimental)
+- cli: Only import changed sources in watch mode
+- database: Use stream based database reader and writer
+
+### Changed
+
+- database: Stream based database build to reduce resouces
+- database: Rewrite database migration handling
+- database: Use stream based database reader and writer
+- Use ESM instead of CommonJS
+
+### Fixed
+
+- server: Fix arguments to handle database read errors
+- extractor: Fix vips thumbnail creation on relative storage dir
+- server: Fix env for missing config file arg
+
 ## [1.15.1] - 2024-06-15
 
 ### Added

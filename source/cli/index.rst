@@ -195,3 +195,52 @@ Example:
     The cast command needs to run in the same network as Google's Chromecast
     device. Please ensure that your docker container runs in the
     same network
+
+plugin command (experimental)
+-----------------------------
+
+The plugin command
+
+* Creates or list plugins
+
+.. literalinclude:: files/plugin-help.out
+    :language: bash
+
+.. note::
+    The plugin feature is quite fresh and handled experimental. Depending
+    on requirements and progress the API might change. You are welcome
+    to test the feature to report your limitations and feature requests
+
+.. note::
+    The plugin feature is currently limited to the extractor and database
+    module. Further modules like search and web application should follow.
+    See :ref:`Plugin` for further details
+
+plugin create command
+---------------------
+
+With the create command you can scaffold a plugin. You can choose the
+source type between vanilla JS or Typescript version. Further you can
+create extractor steps and or database mappers.
+
+The template shows basic usage and add some data.
+
+.. literalinclude:: files/plugin-create-help.out
+    :language: bash
+
+plugin list command
+-------------------
+
+The list command lists active plugins and lists extractors and
+database mappers. These commands are helpful to validate basic
+validation if the plugin can be loaded.
+
+.. literalinclude:: files/plugin-ls-help.out
+    :language: bash
+
+.. literalinclude:: files/plugin-ls-extractor-help.out
+    :language: bash
+
+.. literalinclude:: files/plugin-ls-database-help.out
+    :language: bash
+

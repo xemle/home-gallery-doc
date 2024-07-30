@@ -6,20 +6,20 @@ Options:
       --version          Show version number                           [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-      --log-json-format  Log output format in json                     [boolean]
+  -J, --log-json-format  Log output format in json                     [boolean]
   -L, --log-file         Log file
       --log-file-level   Log file level
-         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
-                                                                        "debug"]
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
   -c, --config           Configuration file
-      --auto-config      Search for configuration on common configuration
-                         directories                   [boolean] [default: true]
+      --auto-config      Search for configuration on common configuration direct
+                         ories                         [boolean] [default: true]
   -d, --database         Database filename                            [required]
   -e, --events           Events filename
   -s, --storage          Storage directory                            [required]
   -o, --output           Output directory of export
-  -f, --file             Archive filename of export. Must end with .zip or
-                         .tar.gz                                        [string]
+  -f, --file             Archive filename of export. Must end with .zip or .tar.
+                         gz                                             [string]
   -k, --keep             Keep outputdirectory on archives              [boolean]
   -q, --query            Search query for matching entries              [string]
   -b, --base-path        Base path of static page. e.g. "/gallery"

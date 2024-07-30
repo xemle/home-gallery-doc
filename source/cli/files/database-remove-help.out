@@ -6,14 +6,14 @@ Options:
       --version          Show version number                           [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-      --log-json-format  Log output format in json                     [boolean]
+  -J, --log-json-format  Log output format in json                     [boolean]
   -L, --log-file         Log file
       --log-file-level   Log file level
-         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
-                                                                        "debug"]
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
   -c, -c, --config       Configuration file
-      --auto-config      Search for configuration on common configuration
-                         directories                   [boolean] [default: true]
+      --auto-config      Search for configuration on common configuration direct
+                         ories                         [boolean] [default: true]
   -d, --database         Database filename
   -e, --events           Events filename
   -q, --query            Query to remove from the database   [string] [required]
@@ -23,7 +23,7 @@ Options:
       --level                                                   [default: debug]
 
 Examples:
-  gallery.js database remove -q             Remove all entries with tag
-  tag:trashed                               "trashed"
-  gallery.js database remove -k -q          Keep all entries with tag "good"
-  tag:good
+  gallery.js database remove -q tag:trashe  Remove all entries with tag "trashed
+  d                                         "
+  gallery.js database remove -k -q tag:goo  Keep all entries with tag "good"
+  d

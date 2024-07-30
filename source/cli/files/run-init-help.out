@@ -6,14 +6,14 @@ Options:
       --version          Show version number                           [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
-      --log-json-format  Log output format in json                     [boolean]
+  -J, --log-json-format  Log output format in json                     [boolean]
   -L, --log-file         Log file
       --log-file-level   Log file level
-         [string] [choices: "trace", "debug", "info", "warn", "error"] [default:
-                                                                        "debug"]
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
   -c, --config           Configuration file
-      --auto-config      Search for configuration on common configuration
-                         directories                   [boolean] [default: true]
+      --auto-config      Search for configuration on common configuration direct
+                         ories                         [boolean] [default: true]
   -s, --source           Initial source directory or directories
                                                               [array] [required]
   -f, --force            Force, overwrite existing configuration       [boolean]

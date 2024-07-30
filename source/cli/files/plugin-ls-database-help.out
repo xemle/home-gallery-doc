@@ -1,6 +1,6 @@
-gallery.js export meta
+gallery.js plugin ls database
 
-Export meta data to xmp sidecar files
+List database mappers
 
 Options:
       --version          Show version number                           [boolean]
@@ -14,11 +14,5 @@ Options:
   -c, --config           Configuration file
       --auto-config      Search for configuration on common configuration direct
                          ories                         [boolean] [default: true]
-  -d, --database         Database filename                            [required]
-  -e, --events           Events filename
-  -i, --index            Index file                           [array] [required]
-  -A, --changes-after    Only write meta data changes after given date (in ISO 8
-                         601)                                           [string]
-  -n, --dry-run          Do not perform any writes    [boolean] [default: false]
   -h, --help             Show help                                     [boolean]
       --level                                                   [default: debug]

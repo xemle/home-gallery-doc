@@ -1,8 +1,11 @@
+.. _Development:
+
 Development
 ===========
 
-Welcome to the development section. In this section you will get an overview of
-the source code structure which helps you to fix or extend the gallery.
+Visit :ref:`Internals` and the :ref:`FAQ` to get familiar with the basic
+architecture and design decisions if you plan to develop or fix a feature.
+Visit :ref:`Plugin` section to get into the development.
 
 HomeGallery is written in Javascript/Typescript and the source code is structured in a
 mono repro. To develop and change HomeGallery you need `NodeJS <https://www.nodejs.org>`_,
@@ -14,6 +17,11 @@ architecture and design decisions if you plan to fix a bug or to develop a featu
 .. note::
 
     You are invited to improve the documentation, the feature set or the code.
+
+.. note::
+
+    If you like to extend quickly some functionality, please visit :ref:`Plugin` section
+    and check if your request can be handled through a lightweight plugin.
 
 Overview
 --------
@@ -109,7 +117,7 @@ Backend
 
 Usually you change something in one module.
 
-For example to change something in the database you change to the appropriate module's 
+For example to change something in the database you change to the appropriate module's
 directory and changes the source below the `src` folder. Than you build the sources
 and test your changes.
 
@@ -119,7 +127,7 @@ and test your changes.
     cd packages/database
     npm run build
     # Test your changes via cli command with parameters in the root folder
-    
+
 A bugfix or new feature in the backend should have a unit or an e2e test.
 
 To debug you start the cli in the inspection mode and start the debugger in visual studio code
@@ -167,7 +175,7 @@ different scenarios. The e2e scenarios can be inspected in the e2e folder like `
 
 The e2e output logs are written to ``/tmp/gallery-e2e``. Each run is filed in a dedicated directory.
 ``/tmp/gallery-e2e/latest`` holds a symbolic link to the latest e2e run.
-Each test scenario is filed in a separate directory. 
+Each test scenario is filed in a separate directory.
 
 Within a single output folder the ``cli.log`` keeps the log of the cli calls. While the ``e2e.log`` holds the console
 output of the cli calls. With the tool `jq <https://jqlang.github.io/jq/>`_ you can inspect these files.

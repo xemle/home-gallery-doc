@@ -46,4 +46,10 @@
 
 [webapp] --> [events]
 [webapp] --> [query]
+
+[plugin] --> [common]
+[plugin] --> [database]
+[plugin] --> [logger]
+[plugin] --> [storage]
+
 @enduml

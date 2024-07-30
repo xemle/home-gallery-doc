@@ -1,4 +1,4 @@
-.. _internals:
+.. _Internals:
 
 Internals
 =========
