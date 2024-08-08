@@ -4,6 +4,9 @@ This repository contains the [documentation](https://docs.home-gallery.org) of t
 web gallery [HomeGallery](https://home-gallery.org). The documentation is
 generated through [sphinx](https://www.sphinx-doc.org).
 
+Run `./build.sh` to create the documentation via docker. It will automatically
+create the docker image if it does not exist.
+
 ## Generate through docker
 
 ### Build docker image
