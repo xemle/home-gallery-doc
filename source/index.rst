@@ -26,6 +26,7 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
    cli/index
    configuration/index
    webapp/index
+   search/index
    api-server/index
    faq/index
    plugin/index
