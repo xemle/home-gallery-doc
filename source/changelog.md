@@ -5,10 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.16.0] - 2024-08-09
 
 ### Added
 
+- server: Add user based filter to customize database access
+- plugin: Add query plugin (server side)
+- server: Add SHA256-salted password schema
 - plugin: Initial plugin manager (experimental)
 - cli: Only import changed sources in watch mode
 - database: Use stream based database reader and writer
