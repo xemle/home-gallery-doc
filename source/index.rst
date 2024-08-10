@@ -18,7 +18,7 @@ Please visit the `demo HomeGallery <https://demo.home-gallery.org/>`_ and start 
    It runs also on Mac or Windows but are barley tested.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    general

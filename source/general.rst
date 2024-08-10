@@ -61,7 +61,6 @@ File Format Features
 Limits
 ------
 
-* All users see all media
 * Current tested limits are about 400,000 images/videos
 * The whole database is loaded into the browser and requires recent (mobile) devices and internet connection
 * No support for RAW image formats (yet)

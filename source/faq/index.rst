@@ -46,6 +46,38 @@ your storage folder.
 The configuration folder holds the file index files, the database, the events and the logs.
 The storage folder holds all preview files.
 
+How can I limit access to users?
+--------------------------------
+
+By default the gallery just serves the images without any user authentication.
+
+You can add user authentication in the `server` section in the gallery
+config `gallery.config.yml`. Users can have query filters to limit access
+to the database. The query filter is any search expression from :ref:`search`.
+
+.. code-block:: yaml
+    :linenos:
+
+    server:
+      auth:
+        users:
+          - username: guest
+            password: '{SHA256Salted}xP/FncUGPorp9MWR.puPjM97x/ohkFCdT+wseBPWFlQs2QfAXFW1lJhbiaD4='
+            filter: 'year >= 2024 tag:public'
+
+The password can be generated via node:
+
+.. code-block:: bash
+    :linenos:
+
+    $ node -e "pw=process.argv[1];const {createHash,randomBytes}=require('crypto');salt=randomBytes(12);hash=createHash('sha256').update(salt.toString()+pw).digest('base64');console.log('{SHA256Salted}'+salt.toString('base64')+'.'+hash)" 'guest'
+    {SHA256Salted}xP/FncUGPorp9MWR.puPjM97x/ohkFCdT+wseBPWFlQs2QfAXFW1lJhbiaD4=
+
+.. note::
+   Currently the authentication is limited to browser based Basic Auth.
+   Without running the gallery via HTTPS the authentication is unsecure.
+
+
 What data is requested from public services?
 --------------------------------------------
 
