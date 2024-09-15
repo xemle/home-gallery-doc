@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.17.0] - 2024-09-15
+
+### Added
+
+- webapp: Add dynamic load of plugins
+- cli: Add build version
+- extractor: Add support for avif images
+
+### Changed
+
+- plugin: Add register for extensions
+- plugin: Deprecate ModuleFactory
+
+### Fixed
+
+- server: Fix base path with multiple path segements
+- webapp: Fix tag list with different tag cases
+- plugin: Fix plugin module load on windows
+- cli: Fix execution on windows
+- bundle: Fix binary tmp dir with snapshot
+- extractor: Fix image resizer for all existing previews
+
 ## [1.16.1] - 2024-08-10
 
 ### Fixed

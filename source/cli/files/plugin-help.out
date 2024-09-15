@@ -3,15 +3,13 @@ gallery.js plugin
 Plugin handling
 
 Commands:
-  gallery.js plugin create      Create a new plugin
-  gallery.js plugin list        List plugins                       [aliases: ls]
-  gallery.js plugin plugins     List plugins                           [default]
-  gallery.js plugin extractors  List extractor tasks
-                                                   [aliases: extractor, extract]
-  gallery.js plugin database    List database mappers
+  gallery.js plugin create   Create a new plugin
+  gallery.js plugin list     List plugins                          [aliases: ls]
+  gallery.js plugin plugins  List plugins                              [default]
 
 Options:
       --version          Show version number                           [boolean]
+      --full-version     Show full build version                       [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
   -J, --log-json-format  Log output format in json                     [boolean]

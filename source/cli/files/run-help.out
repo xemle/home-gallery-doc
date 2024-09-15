@@ -9,6 +9,7 @@ Commands:
 
 Options:
       --version          Show version number                           [boolean]
+      --full-version     Show full build version                       [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
   -J, --log-json-format  Log output format in json                     [boolean]

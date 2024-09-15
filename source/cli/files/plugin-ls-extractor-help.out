@@ -2,14 +2,9 @@ gallery.js plugin list
 
 List plugins
 
-Commands:
-  gallery.js plugin ls plugins     List plugins                        [default]
-  gallery.js plugin ls extractors  List extractor tasks
-                                                   [aliases: extractor, extract]
-  gallery.js plugin ls database    List database mappers
-
 Options:
       --version          Show version number                           [boolean]
+      --full-version     Show full build version                       [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
   -J, --log-json-format  Log output format in json                     [boolean]

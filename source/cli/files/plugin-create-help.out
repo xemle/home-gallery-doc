@@ -4,6 +4,7 @@ Create a new plugin
 
 Options:
       --version          Show version number                           [boolean]
+      --full-version     Show full build version                       [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
   -J, --log-json-format  Log output format in json                     [boolean]
@@ -19,6 +20,8 @@ Options:
                          s separate directory of given plugin name below
   -t, --sourceType       Source language type
                [choices: "single", "vanilla", "typescript"] [default: "vanilla"]
+  -e, --environment      Plugin environments
+                      [array] [choices: "server", "browser"] [default: "server"]
   -m, --modules          Plugin modules. Any set of extractor, database
                              [array] [choices: "extractor", "database", "query"]
   -f, --force            Force plugin folder overwrite if exists

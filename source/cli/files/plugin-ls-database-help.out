@@ -1,9 +1,10 @@
-gallery.js plugin ls database
+gallery.js plugin list
 
-List database mappers
+List plugins
 
 Options:
       --version          Show version number                           [boolean]
+      --full-version     Show full build version                       [boolean]
   -l, --log-level        Console log level
          [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
   -J, --log-json-format  Log output format in json                     [boolean]
@@ -14,5 +15,7 @@ Options:
   -c, --config           Configuration file
       --auto-config      Search for configuration on common configuration direct
                          ories                         [boolean] [default: true]
+      --long             Long version                 [boolean] [default: false]
+      --json             Print plugins in JSON format [boolean] [default: false]
   -h, --help             Show help                                     [boolean]
       --level                                                   [default: debug]
