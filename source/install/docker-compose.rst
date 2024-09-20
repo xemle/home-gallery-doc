@@ -24,7 +24,7 @@ Quickstart
 .. code-block:: bash
     :linenos:
 
-    mkdir -p data
+    mkdir -p data/config
     echo "CURRENT_USER=$(id -u):$(id -g)" >> .env
     docker compose run gallery run init --source /data/Pictures
     docker compose up -d

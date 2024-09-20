@@ -32,7 +32,7 @@ Quickstart
 .. code-block:: bash
     :linenos:
 
-    mkdir -p data
+    mkdir -p data/config
     alias gallery="docker run -ti --rm \
       -v $(pwd)/data:/data \
       -v $HOME/Pictures:/data/Pictures \
