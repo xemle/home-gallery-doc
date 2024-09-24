@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.0] - 2024-09-24
+
+### Added
+
+- webapp: Add toggle for face and object annotations
+- server: Add option prefix
+- webapp: Support IPTC description
+
+### Changed
+
+- server: Reduce log levels of request logs
+
+### Fixed
+
+- webapp: Fix tag wrap in detail view
+- query: Fix location alias
+- webapp: Fix street/road search link
+- webapp: Fix similarity search
+- server: Fix page reload with base path
+- webapp: Fix browser based router with base path
+
 ## [1.17.0] - 2024-09-15
 
 ### Added
