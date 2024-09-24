@@ -23,7 +23,7 @@ File `nginx.conf`:
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
 
-            proxy_pass http://gallery:3000/;
+            proxy_pass http://gallery:3000/pictures/;
         }
     }
 
@@ -43,8 +43,8 @@ File `compose.yml`:
           - GALLERY_OPEN_BROWSER=false
           # Use polling for safety of possible network mounts. Try 0 to use inotify via fs.watch
           - GALLERY_WATCH_POLL_INTERVAL=300
-          # Define base path
-          - GALLERY_BASE_PATH=/pictures
+          # Define server prefix
+          - GALLERY_PREFIX=/pictures
         volumes:
           - ./data:/data
           # Mount your media directories below /data

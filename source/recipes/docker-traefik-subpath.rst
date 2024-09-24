@@ -12,14 +12,7 @@ File `config.conf`:
       routers:
         gallery:
           rule: "PathPrefix(`/pictures`)"
-          middlewares:
-            - stripPictures
           service: gallery
-      middlewares:
-        stripPictures:
-          stripPrefix:
-            prefixes:
-              - "/pictures"
       services:
         gallery:
           loadBalancer:
@@ -43,8 +36,8 @@ File `compose.yml`:
           - GALLERY_OPEN_BROWSER=false
           # Use polling for safety of possible network mounts. Try 0 to use inotify via fs.watch
           - GALLERY_WATCH_POLL_INTERVAL=300
-          # Define base path
-          - GALLERY_BASE_PATH=/pictures
+          # Define server prefix
+          - GALLERY_PREFIX=/pictures
         volumes:
           - ./data:/data
           # Mount your media directories below /data
