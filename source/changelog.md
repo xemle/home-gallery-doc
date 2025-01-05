@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.19.0] - 2025-01-05
+
+### Added
+
+- webapp: Feature flag for sources to download original files
+
+### Changed
+
+- index: Apply file index journal after successful database update
+
+### Fixed
+
+- server: Fix user on server log
+- storage: Log error on storage purge
+
 ## [1.18.0] - 2024-09-24
 
 ### Added
