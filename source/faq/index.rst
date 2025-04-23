@@ -134,7 +134,42 @@ recalculated later and this needs to be done only once. Even if the
 image files are renamed or moved to other directories and their
 file content does not change.
 
-Why is a progress indicator for all files is missing?
+How to split same source directory to multiple file indices
+-----------------------------------------------------------
+
+If a file index becomes to large it is good to split the gallery
+into different sources. You can use the same source directory
+with multiple file indices where each file index covers distinct
+directories.
+
+Following example shows 3 file indices sharing the same source
+directory ``{baseDir}/files``. The exclude pattern follows the 
+`gitignore <https://git-scm.com/docs/gitignore>`_ pattern. Last
+rule wins.
+
+
+.. code-block::
+
+    sources:
+      - dir: '{baseDir}/files'
+        index: '{configDir}/{configPrefix}{basename(dir)}-2025.idx'
+        excludes:
+         - '**'
+         - '!/2025'
+         - '!/2025/**'
+      - dir: '{baseDir}/files'
+        index: '{configDir}/{configPrefix}{basename(dir)}-2024.idx'
+        excludes:
+         - '**'
+         - '!/2024'
+         - '!/2024/**'
+      - dir: '{baseDir}/files'
+        index: '{configDir}/{configPrefix}{basename(dir)}-others.idx'
+        excludes:
+         - '/2025'
+         - '/2024'
+
+Why a progress indicator for all files is missing?
 -----------------------------------------------------
 
 TL;DR the current non-progress state is on purpose. The recommended
