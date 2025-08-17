@@ -134,6 +134,43 @@ recalculated later and this needs to be done only once. Even if the
 image files are renamed or moved to other directories and their
 file content does not change.
 
+How can I disable object detection, similarity and face recognition?
+--------------------------------------------------------------------
+
+If you have a fresh installation of HomeGallery, you can disable
+object detection, similarity and face recognition in the
+``gallery.config.yml`` file in the ``extractor`` section:
+
+.. code-block:: yaml
+    :linenos:
+
+    extractor:
+      apiServer:
+        disable:
+          - similarDetection
+          - objectDetection
+          - faceDetection
+
+If you have an existing installation, existing detection will be
+used. So you need to disable the database mapper for these features in the
+``gallery.config.yml`` file in the ``pluginManager`` section:
+
+.. code-block:: yaml
+    :linenos:
+
+    pluginManager:
+      disabled:
+        - baseMapper.similarityMapper
+        - baseMapper.objectMapper
+        - baseMapper.faceMapper
+
+and you need to rebuild the database with:
+
+.. code-block:: bash
+    :linenos:
+
+    $ ./gallery.js database create
+
 How to split same source directory to multiple file indices
 -----------------------------------------------------------
 
