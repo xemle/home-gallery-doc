@@ -104,27 +104,11 @@ return an array with different plugin modules.
 .. code-block:: js
     :linenos:
 
-    const factory = async manager => {
-      const log = manager.createLogger('plugin.acme.factory')
-      log.trace(`Initialize plugin factory`)
-
-      return {
-        getExtractors() {
-          return []
-        },
-        getDatabaseMappers() {
-          return []
-        },
-        getQueryPlugins() {
-          return []
-        },
-      }
-    }
-
     const plugin = {
       name: 'Acme Plugin',
       version: '1.0',
-      requires: [],
+      // requires: ['other@1.0.0'],
+      // environment: ['server', 'browser']
       async initialize(manager) {
         const log = manager.createLogger('plugin.acme')
         log.trace(`Initialize Acme plugin`)
@@ -135,16 +119,35 @@ return an array with different plugin modules.
 
     export default plugin
 
+    async function factory(manager) {
+      // register plugins extensions here
+    }
+
 The manager offers access to the gallery config and the context properties and can create logger instances.
 
 .. code-block:: ts
     :linenos:
+
+    type TExtenstionType = 'extractor' | 'databaseMapper' | 'queryPlugin'
+    type TExtensionBase = {
+      name: string
+      order?: number
+    }
+
+    type TGalleryContext = {
+      type: 'extractorContext' | 'databaseMapperContext' | 'serverContext' | 'cliContext' | 'browserContext'
+      plugin: Record<string, any>
+      [key: string]: any
+    }
+
+    type TGalleryConfig = Record<string, any>
 
     type TManager = {
       getApiVersion(): string
       getConfig(): TGalleryConfig
       createLogger(module: string): TLogger
       getContext(): TGalleryContext
+      register(type: TExtenstionType, extension: TExtensionBase & any): Promise<void>;
     }
 
 Plugins can store properties and objects in the context, namespaeced by `plugin.<pluginName>`.
@@ -188,47 +191,45 @@ The async `create` function returns:
 .. code-block:: js
     :linenos:
 
-    const factory = async manager => {
-      const acmeExtractor = await extractor(manager)
-      return {
-        getExtractors() {
-          return [extractor]
-        },
-        // ...
-      }
+    // plugin definition as above
+
+    async function factory(manager) {
+      await manager.register('extractor', acmeExtractor(manager))
     }
 
-    const extractor = manager => ({
-      name: 'acmeExtractor',
-      phase: 'file',
+    function extractor(manager) (
+      const pluginConfig = manager.getConfig().plugin?.acme || {}
+      const suffix = 'acme.json'
+      const log = manager.createLogger('plugin.acme.extractor')
 
-      async create(storage) {
-        const pluginConfig = manager.getConfig().plugin?.acme || {}
-        // plugins can provide properties or functions on the context
-        const suffix = 'acme.json'
+      return {
+        name: 'acmeExtractor',
+        phase: 'file',
 
-        const created = new Date().toISOString()
-        const value = 'Acme'
-        // Read property from plugin's configuration plugin.acme.property for customization
-        const property = pluginConfig.property || 'defaultValue'
+        async create(storage) {
+          // plugins can provide properties or functions on the context
 
-        const log = manager.createLogger('plugin.acme.extractor')
-        log.debug(`Creating Acme extractor task`)
+          const created = new Date().toISOString()
+          const value = 'Acme'
+          // Read property from plugin's configuration plugin.acme.property for customization
+          const property = pluginConfig.property || 'defaultValue'
 
-        return {
-          test(entry) {
-            // Execute task if the storage file is not present
-            return !storage.hasFile(entry, suffix)
-          },
-          async task(entry) {
-            log.debug(`Processing ${entry}`)
-            const data = { created, value, property }
-            // Write plugin data to storage. Data can be a buffer, string or object
-            return storage.writeFile(entry, suffix, data)
+          log.debug(`Creating Acme extractor task`)
+
+          return {
+            test(entry) {
+              // Execute task if the storage file is not present
+              return !storage.hasFile(entry, suffix)
+            },
+            async task(entry) {
+              log.debug(`Processing ${entry}`)
+              const data = { created, value, property }
+              // Write plugin data to storage. Data can be a buffer, string or object
+              return storage.writeFile(entry, suffix, data)
+            }
           }
         }
       }
-
     })
 
 The storage object has functions to read data from and write data to the object storage.
@@ -271,28 +272,28 @@ The mapping is synchronous. Asynchronous stuff belongs to the extractor.
 .. code-block:: js
     :linenos:
 
-    const factory = async manager => {
-      const acmeDatabaseMapper = databaseMapper(manager)
-      return {
-        getDatabaseMappers() {
-          return [acmeDatabaseMapper]
-        },
-        // ...
-      }
+    // plugin definition as above
+
+    async function factory(manager) {
+      await manager.register('database', databaseMapper(manager))
     }
 
-    const databaseMapper = manager => ({
-      name: 'acmeMapper',
-      order: 1,
+    function databaseMapper(manager) (
+      const log = manager.createLogger('plugin.acmeMapper')
 
-      mapEntry(entry, media) {
-        const log = manager.createLogger('plugin.acmeMapper')
-        log.info(`Map database entry: ${entry}`)
+      return {
+        name: 'acmeMapper',
+        order: 1,
 
-        // Use somehow the data from the extractor task
-        media.plugin.acme = entry.meta.acme
+        // entry is the storage entry containing all extracted data
+        // media is the target database entry
+        mapEntry(entry, media) {
+          log.info(`Map database entry: ${entry}`)
+
+          // Use somehow the data from the extractor task
+          media.plugin.acme = entry.meta.acme
+        }
       }
-
     })
 
 Query plugin
@@ -314,48 +315,50 @@ skip further chain evaluation.
 .. code-block:: js
     :linenos:
 
-    const factory = async manager => {
-      const acmeQueryPlugin = queryPlugin(manager)
-      return {
-        getQueryPlugins() {
-          return [acmeQueryPlugin]
-        },
-        // ...
-      }
+    // plugin definition as above
+
+    async function factory(manager) {
+      await manager.register('query', queryPlugin(manager))
     }
 
-    const queryPlugin = manager => ({
-      name: 'acmeQuery',
-      order: 1,
-      textFn(entry) {
-        return entry.plugin.acme?.value || ''
-      },
-      transformRules: [
-        {
-          transform(ast, queryContext) {
-            return ast
+    function queryPlugin(manager) {
+      return {
+        name: 'acmeQuery',
+        order: 1,
+        // Get simple text search from plugin
+        // entry is the database entry
+        textFn(entry) {
+          return entry.plugin.acme?.value || ''
+        },
+        // Transform ther query AST before filter and sort function
+        transformRules: [
+          {
+            transform(ast, queryContext) {
+              return ast
+            }
           }
-        }
-      ],
-      queryHandler(ast, queryContext) {
-        // Create filter on acme keyword in condition to support 'acme = value' or 'acme:value'
-        if (ast.type == 'cmp' && ast.key == 'acme' && ast.op == '=') {
-          ast.filter = (entry) => {
-            return entry.plugin?.acme?.value == ast?.value?.value
+        ],
+        // Add plugin filter or sort functions from query AST
+        queryHandler(ast, queryContext) {
+          // Create filter on acme keyword in condition to support 'acme = value' or 'acme:value'
+          if (ast.type == 'cmp' && ast.key == 'acme' && ast.op == '=') {
+            ast.filter = (entry) => {
+              return entry.plugin?.acme?.value == ast?.value?.value
+            }
+            // The ast node could be handled. Return true to prevent further chain calls
+            return true
           }
-          // The ast node could be handled. Return true to prevent further chain calls
-          return true
-        }
 
-        // Create custom sort key 'order by acme'
-        if (ast.type == 'orderKey' && ast.value == 'acme') {
-          ast.scoreFn = e => e.plugin.acme.created || '0000-00-00'
-          ast.direction = 'desc'
-          return true
-        }
+          // Create custom sort key 'order by acme'
+          if (ast.type == 'orderKey' && ast.value == 'acme') {
+            ast.scoreFn = e => e.plugin.acme.created || '0000-00-00'
+            ast.direction = 'desc'
+            return true
+          }
 
-        // Check ast and return if ast node can be resolved
-        return false
+          // Check ast and return if ast node can be resolved
+          return false
+        }
       }
     }
 
