@@ -1,0 +1,23 @@
+[
+  {
+    "type": "file",
+    "name": "help",
+    "label": "help"
+  },
+  "run",
+  {
+    "type": "file",
+    "name": "export-meta",
+    "label": "export meta"
+  },
+  {
+    "type": "file",
+    "name": "export-static",
+    "label": "export static"
+  },
+  "fetch",
+  "database",
+  "storage",
+  "plugin",
+  "cast"
+]

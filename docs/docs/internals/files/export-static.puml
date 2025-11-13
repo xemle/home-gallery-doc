@@ -1,0 +1,26 @@
+@startuml
+<style>
+arrow {
+  LineColor #a80137
+}
+card {
+  BackgroundColor #fefece
+}
+</style>
+database Storage {
+}
+database Database {
+}
+database Events {
+}
+card Export [
+  Export Static
+]
+folder "Static site" {
+}
+
+Storage -down-> Export
+Database -down-> Export
+Events -down-> Export
+Export -down-> "Static site"
+@enduml

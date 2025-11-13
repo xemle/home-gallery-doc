@@ -1,0 +1,62 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "Start"
+  },
+  {
+    "type": "dir",
+    "name": "install",
+    "label": "Install"
+  },
+  {
+    "type": "file",
+    "name": "configuration/index",
+    "label": "Configuration"
+  },
+  {
+    "type": "dir",
+    "name": "cli",
+    "label": "CLI"
+  },
+  {
+    "type": "file",
+    "name": "webapp/index",
+    "label": "Webapp"
+  },
+  {
+    "type": "file",
+    "name": "search/index",
+    "label": "Search"
+  },
+  {
+    "type": "file",
+    "name": "faq/index",
+    "label": "FAQ"
+  },
+  {
+    "type": "file",
+    "name": "api-server/index",
+    "label": "API server"
+  },
+  {
+    "type": "dir",
+    "name": "recipes",
+    "label": "Recipes"
+  },
+  {
+    "type": "dir",
+    "name": "internals",
+    "label": "Internals"
+  },
+  {
+    "type": "file",
+    "name": "development/index",
+    "label": "Development"
+  },
+  {
+    "type": "dir",
+    "name": "plugin",
+    "label": "Plugin"
+  }
+]

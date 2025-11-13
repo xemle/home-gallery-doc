@@ -27,3 +27,9 @@ Preview the production build locally:
 ```bash
 npm run preview
 ```
+
+## Build PlantUML diagrams
+
+```bash
+docker compose run plantuml-converter java -jar plantuml.jar -tsvg '**/*.puml'
+```

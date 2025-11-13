@@ -1,0 +1,21 @@
+import CodeBlock from '../../../src/CodeBlock.tsx';
+import castHelp from './files/cast-help.out';
+
+## cast command
+
+The cast command
+
+-   Cast a slideshow to a Chromecast-enabled TV
+-   Supports subsets via query
+
+<CodeBlock code={castHelp} language="bash"></CodeBlock>
+
+Example:
+
+```bash
+./gallery cast -u https://demo.home-gallery.org
+```
+
+:::note
+Cast command does not work inside a docker container by default. The cast command needs to run in the same network as Google\'s Chromecast device. Please ensure that your docker container runs in the same network
+:::

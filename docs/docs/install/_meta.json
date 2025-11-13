@@ -1,0 +1,42 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "General"
+  },
+  {
+    "type": "file",
+    "name": "docker-compose",
+    "label": "docker-compose"
+  },
+  {
+    "type": "file",
+    "name": "docker",
+    "label": "docker"
+  },
+  {
+    "type": "file",
+    "name": "binary",
+    "label": "Binary"
+  },
+  {
+    "type": "file",
+    "name": "app-bundle",
+    "label": "App Bundle"
+  },
+  {
+    "type": "file",
+    "name": "generic-bundle",
+    "label": "Generic Bundle"
+  },
+  {
+    "type": "file",
+    "name": "source",
+    "label": "Source"
+  },
+  {
+    "type": "file",
+    "name": "azure",
+    "label": "Azure"
+  }
+]

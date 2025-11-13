@@ -1,0 +1,19 @@
+services:
+  plantuml-converter:
+    image: plantuml/plantuml
+    container_name: plantuml-converter
+    volumes:
+      - .:/puml-diagrams
+    working_dir: /puml-diagrams
+    command: >
+      sh -c "
+      find -type f -name \"*.puml\" | while read file; do
+        if [ -f \"$$file\" ]; then
+          echo \"Processing $$file\"
+          java -jar /usr/share/java/plantuml.jar -tpng \"$$file\" -o \"$${file/.puml/.png}\"
+          java -jar /usr/share/java/plantuml.jar -tsvg \"$$file\" -o \"$${file/.puml/.svg}\"
+        fi
+      done
+      "
+    user: '${UID:-1000}:${GID:-1000}'
+    restart: 'no'

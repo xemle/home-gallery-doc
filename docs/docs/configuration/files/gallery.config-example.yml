@@ -1,0 +1,235 @@
+#
+# HomeGallery configuration file
+#
+#
+# Default configuration file is gallery.config.yml. JSON format is
+# also supported (gallery.config.json)
+#
+# This is a comment, starting with hash tag and space ('# ')
+# A default value starting with hash tag and variable ('#baseDir...')
+#
+# Directory value examples:
+# - /absolute/directory
+# - relative/directory/to/current/working/dir
+# - ~/directory/in/your/home
+# - ./relative/directory/to/configuration/file
+#
+# Variable replacements
+#   baseDir: '~'
+#   configDir: '{baseDir}/.config/home-gallery'
+# configDir is replaced to '~/.config/home-gallery' and than to '$HOME/.config/home-gallery'
+#
+# Variables are overwritten by environment variables
+#
+# Variables are baseDir, configDir, configPrefix, cacheDir and dir in sources
+# or environment variables GALLERY_BASE_DIR, GALLERY_CONFIG_DIR, GALLERY_CONFIG_PREFIX, GALLERY_CACHE_DIR
+
+#
+# General
+#
+#baseDir: '~'
+#configDir: '{baseDir}/.config/home-gallery'
+# file prefix for index, database and events
+#configPrefix: ''
+#cacheDir: '{baseDir}/.cache/home-gallery'
+
+#
+# Sources
+#
+# List of media source directories. These can be read only.
+#
+# All sources are used to build the gallery database. If you need
+# different databases or gallery instances use different gallery
+# configurations
+sources:
+  - dir: '{baseDir}/Pictures'
+    #index: '{configDir}/{configPrefix}{basename(dir)}.idx'
+    # excludes are using gitignore patterns
+    #excludes:
+      #- .DS_Store
+      #- ._*
+      #- '*.tmp'
+      #- '*cache*'
+    #excludeIfPresent: .galleryignore
+    # excludeFromFile: '{configDir}/excludes'
+    # Use maxFilesize to exclude big files such as videos to speedup initial setup
+    # maxFilesize: 20M
+    # If source directory/disk is offline/unmounted set it to true.
+    # Offline sources require an index file. Previews and meta data
+    # should be extracted first before marking a source offline
+    #offline: false
+    # Allows the original files to be downloaded via de webapp.
+    # This adds a link to images of this source in the details view.
+    # Sources set as `offline` won't be made available.
+    #downloadable: true
+    # Filename matcher for checksum recalculation
+    # size-ctime-inode: this matcher should be used if possible, might
+    #                   not work on windows
+    # size-ctime: this matcher should be used if stable fs inodes are
+    #             not available and might not work for fuse shares
+    # size: this matcher should be used if you know what you are doing
+    #matcher: size-ctime-inode
+
+#
+# Extractor settings
+#
+#extractor:
+  # excludes:
+  #   - *.xmp
+  #   - *.svg
+  # excludeFromFile: '{configDir}/excludes'
+  # Preview image settings
+  #image:
+  #  previewSizes: [1920, 1280, 800, 320, 128]
+  #  previewQuality: 80
+  #video:
+  #  previewSize: 720 # used as preview size and preview filename
+  #  ext: mp4 # used as target video container and preview filename
+  #  scale: -2:'min(720,ih)' # overwrites previewSize. E.g. -2:'min(ih,max(720,min(1080,ih*.5)))' for 720p <= height*0.5 <= 1080p or height, if height < 720
+  #  frameRate: 30
+  #  maxVideoBitRate: 4000 # in KB
+  #  videoEncoder: libx264
+  #  preset: slow
+  #  profile: baseline
+  #  level: '3.0'
+  #  addFfmpegArgs: [...] # Additional ffmpeg args
+  #  customFfmpegArgs: [...] # custom ffmpeg args for video conversion, replaces all other settings such previewSize, videoEncoder, addFfmpegArgs, ...
+  # Api Server is used for image similarity, object and face detection
+  #apiServer:
+  #  url: https://api.home-gallery.org
+  #  timeout: 30
+  #  concurrent: 5
+  #  disable:
+  #    - similarDetection
+  #    - objectDetection
+  #    - faceDetection
+  #geoReverse:
+  #  url: https://nominatim.openstreetmap.org
+  #   Preffered address language of geo code reverse lookups
+  #   addressLanguage: [de, en-US] # for multiple languages
+  #  addressLanguage: [en, de]
+  # excludes are using gitignore patterns
+  #excludes: []
+  # Use native system commands. It is recoomended on armv6 and arm7 platform
+  # since the npm packages do not provide binaries for these platforms
+  #useNative:
+  #  - vipsthumbnail # use libvips to resize images
+  #  - convert # use ImageMagick to resize images
+  #  - ffprobe
+  #  - ffmpeg
+
+#
+# Storage and files configuration
+#
+#storage:
+  #dir: '{cacheDir}/storage'
+#database:
+  #file: '{configDir}/{configPrefix}database.db'
+  # The full database creation is memory consuming. The default value is 2048 MB.
+  # On memory errors or for larger photo collections (>50000 images) 4096 MB is recommended
+  # Use less memory for smaller devices (e.g. Raspberry Pi Zero), e.g. 512 MB.
+  # Node's default memory limit is 512 MB (changeable via --max-old-space-size node arg)
+  #maxMemory: 2048
+  # excludes:
+  #   - *.xmp
+  #   - *.svg
+  # excludeFromFile: '{configDir}/excludes'
+  # supportedTypes
+  #   - image
+  #   - rawImage
+  #   - video
+#events:
+  #file: '{configDir}/{configPrefix}events.db'
+
+#
+# Server configuration
+#
+#server:
+  #port: 3000
+  #host: '0.0.0.0'
+  # security configuration for https
+  # key: '{configDir}/server.key'
+  # cert: '{configDir}/server.crt'
+  # Open browser when server starts
+  #openBrowser: true
+  # Enable basic authentication users and ip whitelist rules which require no authentication
+  # First matching rule wins. Default rules are: allow: localhost and deny: all.
+  # Hashed password can be generated via
+  #   node -e "pw=process.argv[1];const {createHash,randomBytes}=require('crypto');salt=randomBytes(12);hash=createHash('sha256').update(salt.toString()+pw).digest('base64');console.log('{SHA256-salted}'+salt.toString('base64')+'.'+hash)" 'password'
+  #   {SHA256-salted}FkcbhhcHYW0DdE9u.P9Ik9MG8ldtO0fzGB+RV186vi8PZMomsya5OWC0AEiA=
+  #   node -e "pw=process.argv[1]||'';sha1=require('crypto').createHash('sha1').update(pw).digest('base64');console.log('{SHA}'+sha1)" password
+  #   {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
+  # auth:
+  #  public:
+  #    filter: 'year >= 2024 tag:public' # Database filter for non authenticated users and non whitelisted IPs
+  #  users:
+  #    - username: password
+  #    - username: '{SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g='
+  #    - username: admin
+  #      password: '{SHA256-salted}FkcbhhcHYW0DdE9u.P9Ik9MG8ldtO0fzGB+RV186vi8PZMomsya5OWC0AEiA=' # passsword
+  #      filter: '' # no database filter for admin user
+  #    - username: guest
+  #      password: '{SHA256-salted}W1jrZgK81z06YLhA.qTSmeyYtPP19ZEpGiiAyVn61nly4jqbuuGoSefzLm98=' # guest
+  #      filter: 'year >= 2019 not tag:private'
+  #  rules:
+  #    - allow: localhost
+  #    - allow: '192.168/16'
+  #    - deny: all
+  # Prefix of application. E.g. /gallery
+  #prefix: /
+  # Prefix path for browser only. basePath is Overwritten by prefix
+  #basePath: /
+  # Import sources on server start
+  #importSources: true
+  # Watch sources and import files on changes
+  #watchSources: true
+  #api:
+    #tree:
+      #monthGroupSize: 4
+      #irgnoreRecentYears: 4
+
+#
+# Webapp configuration
+#
+#webapp:
+  # Disabled webapp features
+  #disabled:
+    #- edit
+    #- serverEvents
+    #- pwa
+    #- offlineDatabase
+    #- worker
+
+#
+# Plugin settings
+#
+#pluginManager:
+  # Directories to load. Each folder entry for or dir is handled as plugin
+  #dirs:
+    # First directory is default directory for plugin creation
+    #- plugins
+  # List of dedicated plugin files
+  #plugins:
+    #- pluginFile
+  #disabled:
+    #- acmePlugin
+    #- acmePlugin.extensionName
+
+# Plugin settings
+#plugin:
+  # Plugin name
+  #acme:
+    # Plugin setting
+    #prop: value
+
+logger:
+  # Currently console and file loggers are available
+  - type: console
+    # Log level could be one of trace, debug, info, warn, error, fatal, silent
+    level: info
+    # format: json
+  # File logger format is in newline delimited JSON. See http://ndjson.org
+  - type: file
+    # Log level could be one of trace, debug, info, warn, error, fatal, silent
+    level: debug
+    file: '{configDir}/{configPrefix}gallery.log'

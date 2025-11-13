@@ -1,0 +1,26 @@
+@startuml
+<style>
+arrow {
+  LineColor #a80137
+}
+card {
+  BackgroundColor #fefece
+}
+</style>
+database FileIndex {
+}
+database Database {
+}
+database Events {
+}
+card Export [
+  Export Meta
+]
+folder Files {
+}
+
+FileIndex -down-> Export
+Database -down-> Export
+Events -down-> Export
+Export -down-> Files
+@enduml

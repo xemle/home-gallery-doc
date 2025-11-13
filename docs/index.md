@@ -2,36 +2,39 @@
 pageType: home
 
 hero:
-  name: My Site
-  text: A cool website!
-  tagline: This is the tagline
+  name: HomeGallery
+  text: |
+    Self Hosted
+    Open Source
+    Web Gallery
+  tagline: Your private photo gallery for your home
   actions:
     - theme: brand
-      text: Quick Start
-      link: /guide/
+      text: Demo
+      link: https://demo.home-gallery.org
     - theme: alt
       text: GitHub
-      link: https://github.com/web-infra-dev/rspress
+      link: https://github.com/xemle/home-gallery
   image:
-    src: /rspress-icon.png
-    alt: Logo
+    src: /gallery-hero.png
+    alt: HomeGallery Hero
 features:
-  - title: Blazing fast build speed
-    details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
-    icon: 🏃🏻‍♀️
-  - title: Support for MDX content writing
-    details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
+  - title: Your files and folders
+    details: Keep your files and folder structure and browse a beautiful gallery on top of them. Dig through your images and videos
+    icon: 📁
+  - title: Any platform & open source
+    details: Run it everywhere. Available for Docker, Linux, Mac, Windows, PWA. Writen JS/TS. One language for backend and frontend. Extend it your way
     icon: 📦
-  - title: Built-in full-text search
-    details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
-    icon: 🎨
-  - title: Simpler I18n solution
-    details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
-    icon: 🌍
-  - title: Static site generation
-    details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
+  - title: AI powered image discovery
+    details: Find your lost memories without manual tagging step by similar image search. Find all sunset, food or building image
     icon: 🌈
-  - title: Providing multiple custom capabilities
-    details: Through its extension mechanism, you can easily extend theme UI and build process.
-    icon: 🔥
+  - title: Tagging & Face Recognition
+    details: Single and multi image tagging. Find your family members by similar faces
+    icon: 🏷️
+  - title: Geo Information
+    details: Get address information via reverse geo location from your GPS tagged photos and browse your history in a map 
+    icon: 🌎
+  - title: Flexible search
+    details: Create your own filter with flexible and powerful search expressions which is fast as light
+    icon: 🔎
 ---

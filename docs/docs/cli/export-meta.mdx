@@ -1,0 +1,22 @@
+import CodeBlock from '../../../src/CodeBlock.tsx';
+import exportMetaHelp from './files/export-meta-help.out';
+
+## export meta command
+
+The export meta command
+
+-   Exports meta data to XMP sidecar files
+
+All media with manual tags from HomeGallery are written to XMP sidecar
+files. By default it will create `<name>.<ext>.xmp` file. E.g. for the
+image `IMG_1234.JPG` the sidecar `IMG_1234.JPG.xmp` is created. If
+`IMG_1234.xmp` exists it will use this file.
+
+The tags are written through [Exiftool](https://exiftool.org) to
+following namespaces:
+
+- Dublin Core (see [Exiftool dc Tags](https://exiftool.org/TagNames/XMP.html#dc))
+- Digikam (see [Exiftool digiKam Tags](https://exiftool.org/TagNames/XMP.html#digiKam))
+- Lightroom (see [Exiftool lr Tags](https://exiftool.org/TagNames/XMP.html#Lightroom))
+
+<CodeBlock code={exportMetaHelp} language="bash"></CodeBlock>

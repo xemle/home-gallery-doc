@@ -1,0 +1,23 @@
+@startuml
+<style>
+arrow {
+  LineColor #a80137
+}
+card {
+  BackgroundColor #fefece
+}
+</style>
+folder Files {
+}
+database FileIndex {
+}
+card Extractor [
+  Extractor
+]
+folder StorageDir {
+}
+
+Files -down-> Extractor
+FileIndex -down-> Extractor
+Extractor -down-> StorageDir
+@enduml

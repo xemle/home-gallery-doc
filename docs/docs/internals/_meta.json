@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "workflow",
+    "label": "Workflow"
+  },
+  {
+    "type": "file",
+    "name": "building-blocks",
+    "label": "Building Blocks"
+  },
+  {
+    "type": "file",
+    "name": "data-structures",
+    "label": "Data Structures"
+  },
+  {
+    "type": "file",
+    "name": "design-decisions",
+    "label": "Design Decisions"
+  }
+]

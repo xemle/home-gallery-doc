@@ -1,0 +1,21 @@
+[
+  {
+    "text": "Why?",
+    "link": "/why/",
+    "activeMatch": "/why/"
+  },
+  {
+    "text": "Docs",
+    "link": "/docs/",
+    "activeMatch": "/docs/"
+  },
+  {
+    "text": "Demo",
+    "link": "http://demo.home-gallery.org"
+  },
+  {
+    "text": "Download",
+    "link": "/download/",
+    "activeMatch": "/download/"
+  }
+]

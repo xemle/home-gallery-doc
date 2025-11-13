@@ -3,19 +3,50 @@ import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
-  title: 'My Site',
-  icon: '/rspress-icon.png',
+  title: 'HomeGallery Documentation',
+  icon: '/favicon.ico',
   logo: {
-    light: '/rspress-light-logo.png',
-    dark: '/rspress-dark-logo.png',
+    light: '/logo.svg',
+    dark: '/logo-light.svg',
+  },
+  logoText: 'HomeGallery',
+  route: {
+    exclude: [
+      'docs/**/files/**/*',
+      'src/**'
+    ],
   },
   themeConfig: {
     socialLinks: [
       {
+        icon: 'discord',
+        mode: 'link',
+        content: 'https://discord.gg/kbvmvadCwe',
+      },
+      {
         icon: 'github',
         mode: 'link',
-        content: 'https://github.com/web-infra-dev/rspress',
+        content: 'https://github.com/xemle/home-gallery',
       },
     ],
+  },
+  search: {
+    codeBlocks: true,
+  },
+  outDir: path.join(__dirname, 'dist'),
+  builderConfig: {
+    // Configuration options passed to Rspack
+    tools: {
+      rspack: (config, { addRules }) => {
+        addRules({
+          test: /\.ya?ml$/,
+          type: 'asset/source', // This loads the file content as a string
+        })
+        addRules({
+          test: /\.out$/,
+          type: 'asset/source', // This loads the file content as a string
+        })
+      },
+    },
   },
 });

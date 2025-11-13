@@ -1,0 +1,20 @@
+@startuml
+<style>
+arrow {
+  LineColor #a80137
+}
+card {
+  BackgroundColor #fefece
+}
+</style>
+folder Files {
+}
+card Indexer [
+  Indexer
+]
+database FileIndex {
+}
+
+Files -right-> Indexer
+Indexer -right-> FileIndex
+@enduml

@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "extractor-plugin",
+    "label": "Extractor Plugin"
+  },
+  {
+    "type": "file",
+    "name": "database-mapper-plugin",
+    "label": "Database Mapper Plugin"
+  },
+  {
+    "type": "file",
+    "name": "query-plugin",
+    "label": "Query Plugin"
+  }
+]

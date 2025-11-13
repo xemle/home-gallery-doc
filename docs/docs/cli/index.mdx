@@ -1,0 +1,27 @@
+# CLI/Command line tool
+
+HomeGallery is a command line tool to init the configuration,
+start the web server and import the media sources. It has further
+commands to execute sub task to
+
+- Create and update file index of your media directories
+- Extract meta data and calculate previews
+- Build the gallery database
+- Extract meta data to xmp sidecar files
+- Extract static gallery
+- Fetch a remote HomeGallery to the local gallery
+- Stream media to Google Chromecast
+
+You can list the help of available commands and options via
+`gallery -h`. See the [install](../install/index.md) section
+how to start the CLI in your environment.
+
+By default it starts in the interactive mode. The `run` command should
+be used for scripting, eg. for cron jobs. Other commands can be used in
+advance use cases.
+
+To run the CLI your gallery settings are configured in
+`gallery.config.yml`. It should be initialized via the
+[`run init command`](./run.mdx#run-init-command). See
+[configuration](../configuration/) section for configuration
+details.

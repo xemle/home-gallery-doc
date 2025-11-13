@@ -1,0 +1,27 @@
+@startuml
+<style>
+arrow {
+  LineColor #a80137
+}
+card {
+  BackgroundColor #fefece
+}
+</style>
+database Storage {
+}
+database Database {
+}
+database Events {
+}
+card Server [
+  Server
+]
+card WebApp [
+  WebApp
+]
+
+Storage -down-> Server
+Database -down-> Server
+Events <-down-> Server
+Server <-down-> WebApp
+@enduml

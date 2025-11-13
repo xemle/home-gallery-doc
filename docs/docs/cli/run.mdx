@@ -1,0 +1,78 @@
+import CodeBlock from '../../../src/CodeBlock.tsx';
+import runHelp from './files/run-help.out';
+import runInitHelp from './files/run-init-help.out';
+import runServerHelp from './files/run-server-help.out';
+import runImportHelp from './files/run-import-help.out';
+
+## run command
+
+The `run` command runs common task
+
+<CodeBlock code={runHelp} language="bash"></CodeBlock>
+
+## run init command {#run init command}
+
+<CodeBlock code={runInitHelp} language="bash"></CodeBlock>
+
+Use the `--source` parameter to initialize your media directories. You
+can edit the sources later in the `gallery.config.yml` configuration.
+
+See [configuration](../configuration/index.mdx) section for all
+available configuration options.
+
+## run server command
+
+<CodeBlock code={runServerHelp} language="bash"></CodeBlock>
+
+:::note
+The `server` command starts the local web server. Source directories are
+imported and watched for changes by default
+:::
+
+## run import command
+
+The import command
+
+- creates or updates the file indices
+- extracts meta data and calculates previews
+- build the media database
+- watch for file changes
+
+<CodeBlock code={runImportHelp} language="bash"></CodeBlock>
+
+
+The import command supports 3 modes
+
+- Initial/incremental import
+- Update import
+- Full import
+
+At the beginning you should use the *initial import*. It batches the
+import in several chunks to build the database step by step. At the
+beginning the chunks are small and database updates are done frequently.
+If you have a many files in the database the chunk sizes grow and
+database updates happens less frequently.
+
+When all media are imported and processed you should run *update import*
+to import only new unknown files. Eg. if you copied new camera files
+from your memory cart to your hard drive.
+
+The *full import* processes all files and checks for missing meta data
+or preview files. This mode should be run after your finished the
+initial import - just to be safe. This mode is slow since all media
+files, meta data and previews needs to be checked.
+
+:::note
+The watch mode should use the polling mechanism for larger, slow or remote media repositories. An polling interval of at least 5 min is recommended.
+:::
+
+:::note
+The `import` command can run in parallel to the server. If the database
+is updated, the server and webapp will reload it by default.
+:::
+
+:::note
+If the `import` command is aborted (eg. by the user), you should run a
+full import to ensure that all meta data and all previews are available.
+:::
+

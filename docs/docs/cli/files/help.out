@@ -1,0 +1,30 @@
+Usage: gallery.js [global options] <command> [options]
+
+Commands:
+  gallery.js index        File index
+  gallery.js extract      Extract meta data and calculate preview files
+  gallery.js database     Database commands
+  gallery.js server       Start web server
+  gallery.js storage      Storage utils
+  gallery.js export       Export commands
+  gallery.js fetch        Fetch and merge from remote
+  gallery.js cast         Cast media slideshow to Google Chromecast
+  gallery.js interactive  Interactive menu                             [default]
+  gallery.js run          Run common tasks
+  gallery.js plugin       Plugin handling
+
+Options:
+      --version          Show version number                           [boolean]
+      --full-version     Show full build version                       [boolean]
+  -l, --log-level        Console log level
+         [string] [choices: "trace", "debug", "info", "warn", "error", "silent"]
+  -J, --log-json-format  Log output format in json                     [boolean]
+  -L, --log-file         Log file
+      --log-file-level   Log file level
+  [string] [choices: "trace", "debug", "info", "warn", "error"] [default: "debug
+                                                                              "]
+  -c, --config           Configuration file
+  -h, --help             Show help                                     [boolean]
+      --level                                                   [default: debug]
+
+(c) 2024 HomeGallery - https://home-gallery.org

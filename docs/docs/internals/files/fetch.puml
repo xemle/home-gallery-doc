@@ -1,0 +1,27 @@
+@startuml
+<style>
+arrow {
+  LineColor #a80137
+}
+card {
+  BackgroundColor #fefece
+}
+</style>
+card Server [
+  Server
+]
+card Fetch [
+  Fetch
+]
+folder Storage {
+}
+database Database {
+}
+database Events {
+}
+
+Server -down-> Fetch
+Fetch -down-> Storage
+Fetch -down-> Database
+Fetch -down-> Events
+@enduml
