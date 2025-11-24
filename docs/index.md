@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/xemle/home-gallery
+    - theme: alt
+      text: Discord
+      link: https://discord.gg/kbvmvadCwe
   image:
     src: /gallery-hero.png
     alt: HomeGallery Hero
