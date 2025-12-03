@@ -1,5 +1,6 @@
 import * as path from 'node:path';
 import { defineConfig } from 'rspress/config';
+import { pluginSitemap } from '@rspress/plugin-sitemap';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -33,6 +34,11 @@ export default defineConfig({
   search: {
     codeBlocks: true,
   },
+  plugins: [
+    pluginSitemap({
+      siteUrl: 'https://homegallery.org',
+    }),
+  ],
   outDir: path.join(__dirname, 'dist'),
   builderConfig: {
     // Configuration options passed to Rspack

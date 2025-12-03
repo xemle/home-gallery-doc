@@ -16,6 +16,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.3.7",
     "@eslint/js": "^9.39.1",
+    "@rspress/plugin-sitemap": "^2.0.0-beta.23",
     "@types/node": "^24.10.1",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
