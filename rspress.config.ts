@@ -41,6 +41,16 @@ export default defineConfig({
   ],
   outDir: path.join(__dirname, 'dist'),
   builderConfig: {
+    html: {
+      tags: [
+        {
+          tag: 'script',
+          // Enable dark theme by default
+          children: "window.RSPRESS_THEME = 'dark';",
+        },
+      ],
+    },
+
     // Configuration options passed to Rspack
     tools: {
       rspack: (config, { addRules }) => {
