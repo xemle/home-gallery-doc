@@ -4,6 +4,9 @@ services:
     container_name: plantuml-converter
     volumes:
       - .:/puml-diagrams
+    environment:
+      - _JAVA_OPTIONS=-Duser.home=/tmp
+      - XDG_CACHE_HOME=/tmp/.cache
     working_dir: /puml-diagrams
     command: >
       sh -c "

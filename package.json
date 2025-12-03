@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "npm run copy:files",
     "build": "rspress build",
+    "build:plantuml": "docker compose run plantuml-converter java -jar plantuml.jar -tsvg '**/*.puml'",
     "check": "biome check --write",
     "dev": "rspress dev --port 3002",
     "format": "prettier --write .",
