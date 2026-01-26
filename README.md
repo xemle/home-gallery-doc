@@ -1,4 +1,11 @@
-# Rspress website
+# Documentation of HomeGallery
+
+This repository contains the home page of web gallery [home-gallery.org](https://home-gallery.org)
+and its [documentation](https://home-gallery.org/docs/index.html).
+
+The documentation is generated through [rspress](https://rspress.rs).
+
+See [main repository](https://github.com/xemle/home-gallery) for the source code of the gallery.
 
 ## Setup
 
