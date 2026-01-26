@@ -7,7 +7,7 @@ hero:
     Self Hosted
     Open Source
     Web Gallery
-  tagline: Your private photo gallery for your home
+  tagline: Your private photo gallery for your files
   actions:
     - theme: brand
       text: Demo

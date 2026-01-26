@@ -6,16 +6,15 @@ sidebar_position: 7
 ## Where can I ask questions?
 
 Please ask any questions on the community chat
-[gitter](https://gitter.im/home-gallery/community) or
-[discord](https://discord.gg/kbvmvadCwe).
+[discord](https://discord.gg/kbvmvadCwe) (recommended) or
+[gitter](https://gitter.im/home-gallery/community).
 
 HomeGallery is a spare time project. My timezone is Europe/Berlin.
 Usually I answer questions at 21h same or following day.
 
 ## How can I support this project?
 
-Please read the [CONTRIBUTING
-guidlines](https://github.com/xemle/home-gallery/blob/master/CONTRIBUTING.md).
+Please read the [CONTRIBUTING guidlines](https://github.com/xemle/home-gallery/blob/master/CONTRIBUTING.md).
 
 ## How to synchronize or upload my photos from mobile device?
 
@@ -83,8 +82,7 @@ deployed local. However the setup requires technical knowlege and
 technical maintenance. Following services are called:
 
 For geo reverse lookups (resolve geo coordinates to addess), HomeGallery
-queries the [Nominatim
-Service](https://nominatim.openstreetmap.org/reverse) from
+queries the [Nominatim Service](https://nominatim.openstreetmap.org/reverse) from
 [OpenStreetMap](https://openstreetmap.org). Only geo coordinates are
 transmitted.
 
@@ -96,7 +94,7 @@ images are send to this public API by default. No images or privacy data
 are kept from this API.
 
 The API can be configured and ran also locally or as Docker container.
-See `api-server`{.interpreted-text role="ref"} section for details.
+See [api-server](../api-server/index.md) section for details.
 
 ## How many data is stored in the storage directory?
 
@@ -121,6 +119,8 @@ For images you have think in hours or days. For videos in days or weeks.
 Use following exclude file to process only image files (JPG and PNG):
 
 ```
+# Exclude patterns are git ignore patterns: Last rule wins
+#
 # Include only jpg and png files. Use this exclude file for quick start since
 # video conversion takes time
 
@@ -139,11 +139,14 @@ Use following exclude file to process only image files (JPG and PNG):
 Due the internal structure already processed previews are not
 recalculated later and this needs to be done only once. Even if the
 
-
 Due the internal structure already processed previews are not
 recalculated later and this needs to be done only once. Even if the
 image files are renamed or moved to other directories and their file
 content does not change.
+
+:::note
+HomeGallery uses content based ids (SHA1) for images. Renaming and moving files are fine - your files stay the source of truth.
+:::
 
 ## How can I disable object detection, similarity and face recognition?
 
@@ -188,7 +191,7 @@ Following example shows 3 file indices sharing the same source directory
 `{baseDir}/files`. The exclude pattern follows the
 [gitignore](https://git-scm.com/docs/gitignore) pattern. Last rule wins.
 
-``` 
+```yaml
 sources:
   - dir: '{baseDir}/files'
     index: '{configDir}/{configPrefix}{basename(dir)}-2025.idx'
