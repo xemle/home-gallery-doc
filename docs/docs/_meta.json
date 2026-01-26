@@ -58,5 +58,10 @@
     "type": "dir",
     "name": "plugin",
     "label": "Plugin"
+  },
+  {
+    "type": "file",
+    "name": "changelog",
+    "label": "Changelog"
   }
 ]

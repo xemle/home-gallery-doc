@@ -6,7 +6,8 @@ import path from 'path'
 import { spawn } from 'child_process'
 
 const copy = [
-  {src: 'gallery.config-example.yml', file: 'docs/docs/configuration/files/gallery.config-example.yml'}
+  {src: 'gallery.config-example.yml', file: 'docs/docs/configuration/files/gallery.config-example.yml'},
+  {src: 'CHANGELOG.md', file: 'docs/docs/changelog.md'},
 ]
 
 const cliCommands = [
