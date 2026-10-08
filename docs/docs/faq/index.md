@@ -364,3 +364,21 @@ previews have mostly a lower resolution than the original image.
 :::note
 It is assumed that disk space is not an issue for the usecase of HomeGallery. It is recommended to generate JPG sidecars by your own to have good image preview for your raw images.
 :::
+
+## How can I find out which version is running?
+
+On the command line `gallery --version` prints the version and
+`gallery --full-version` prints the full build information like
+version, commit and build date.
+
+The server provides the same information at `/api/version`, e.g. to
+show the running version on another website:
+
+```bash
+$ curl http://localhost:3000/api/version
+{"version":"1.21.0","commit":"…","created":"…"}
+```
+
+The endpoint respects `server.prefix` and the configured user
+authentication like all other API routes. If no build information is
+available, e.g. when running from source, the version is `unknown`.
